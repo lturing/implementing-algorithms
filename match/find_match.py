@@ -17,7 +17,7 @@ j = 0
 a map to x, b map to y, c map to x, failed, for 'a' haved been mapped to x.
 
 i = 2
-
+...
 '''
 
 def compute_skip(P):
@@ -26,6 +26,7 @@ def compute_skip(P):
     j = 0 
     nex[i] = 0 # include current pos
     p_len = len(P)
+    
     while (i+1) < p_len:
         if P[i+1] == P[j]:
             i += 1
@@ -56,16 +57,13 @@ def match_by_kmp(S, T):
 
         j = 0 
         while j < len_t:
-            #print('j=', j, 'j+i=', j+i, 'i=', i, rec)
             if T[j] not in rec or rec[T[j]] == S[i+j]:
-                
                 rec[T[j]] = S[j+i]
                 j += 1
 
             elif rec[T[j]] != S[i+j]:
                 i = i + nex[j-1]+1
                 j = nex[j-1] + 1
-
                 if i > len_s-len_t:
                     print('i=', i)
                     break 
