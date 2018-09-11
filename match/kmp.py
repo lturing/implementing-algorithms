@@ -42,8 +42,6 @@ def kmp(S, P):
         else:
             j = nex[j] 
 
-        
-
 S = 'BBC ABCDAB ABCDABCDABDE'*7
 P = 'ABCDABD'
 
