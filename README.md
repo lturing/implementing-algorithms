@@ -18,4 +18,5 @@
 [paper](https://github.com/lturing/implementing-algorithms/tree/master/paper)
 
 #### others
+
 ![](https://github.com/lturing/implementing-algorithms/tree/master/photos/Sorting_quicksort_anim.gif)
