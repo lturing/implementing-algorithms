@@ -19,4 +19,5 @@
 
 #### others
 
-![](https://github.com/lturing/implementing-algorithms/tree/master/photos/Sorting_quicksort_anim.gif)
+![](https://github.com/lturing/implementing-algorithms/blob/master/photos/Sorting_quicksort_anim.gif)
+
