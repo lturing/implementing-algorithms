@@ -17,6 +17,8 @@
 #### [paper](https://github.com/lturing/implementing-algorithms/tree/master/paper)
 - [kmp.pdf](https://github.com/lturing/implementing-algorithms/tree/master/paper/kmp.pdf)
 
+-------------------
+
 #### [others](https://github.com/lturing/implementing-algorithms/tree/master/others)
 - [quick sort](https://github.com/lturing/implementing-algorithms/tree/master/others/quick_sort.py)
 ![](https://raw.githubusercontent.com/lturing/implementing-algorithms/master/photos/Sorting_quicksort_anim.gif)
