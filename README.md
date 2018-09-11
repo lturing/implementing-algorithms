@@ -4,14 +4,15 @@
 --------------------------------------------------
 
 #### graph
-[graph](./graph)
+[graph](https://github.com/lturing/implementing-algorithms/tree/master/graph)
+
 
 ---------------
 
 #### match
-[match](./match)
+[match](https://github.com/lturing/implementing-algorithms/tree/master/match)
 
 -------------
 
 #### paper
-[paper](./paper)
+[paper](https://github.com/lturing/implementing-algorithms/tree/master/paper)
