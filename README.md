@@ -20,7 +20,7 @@
 #### others
 
 ##### quick sort
-![](https://github.com/lturing/implementing-algorithms/blob/master/photos/Sorting_quicksort_anim.gif)
+![](https://raw.githubusercontent.com/lturing/implementing-algorithms/master/photos/Sorting_quicksort_anim.gif)
 
 ---------------------
 
