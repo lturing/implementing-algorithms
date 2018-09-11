@@ -3,14 +3,12 @@
 
 --------------------------------------------------
 
-#### graph
-[graph](https://github.com/lturing/implementing-algorithms/tree/master/graph)
+#### [graph](https://github.com/lturing/implementing-algorithms/tree/master/graph)
 
 
 ---------------
 
-#### match
-[match](https://github.com/lturing/implementing-algorithms/tree/master/match)
+#### [match](https://github.com/lturing/implementing-algorithms/tree/master/match)
 
 -------------
 
@@ -18,8 +16,7 @@
 [paper](https://github.com/lturing/implementing-algorithms/tree/master/paper)
 
 #### others
-
-##### quick sort
+##### [quick sort](https://github.com/lturing/implementing-algorithms/tree/master/others/quick_sort.py)
 ![](https://raw.githubusercontent.com/lturing/implementing-algorithms/master/photos/Sorting_quicksort_anim.gif)
 
 ---------------------
