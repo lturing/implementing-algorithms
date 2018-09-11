@@ -46,3 +46,49 @@ S = 'BBC ABCDAB ABCDABCDABDE'*7
 P = 'ABCDABD'
 
 kmp(S, P)
+
+# version_2
+'''
+def compute_skip(P):
+    nex = {}
+    i = 0 
+    j = 0 
+    nex[i] = 0 # include current pos
+    p_len = len(P)
+    while (i+1) < p_len:
+        if P[i+1] == P[j]:
+            i += 1
+            j += 1
+            nex[i] = j 
+        elif j == 0:
+            i += 1
+            nex[i] = 0 
+        else:
+            j = nex[j-1] 
+
+    return nex 
+
+def kmp(S, P):
+    nex = compute_skip(P)
+    i = 0 
+    j = 0 
+    s_len = len(S)
+    p_len = len(P)
+
+    while i < s_len:
+        if S[i] == P[j]:
+            i += 1
+            j += 1
+            if j == p_len:
+                j = nex[j-1]
+
+        elif j == 0:
+            i += 1
+        else:
+            j = nex[j-1]
+
+S = 'BBC ABCDAB ABCDABCDABDE'*7
+P = 'ABCDABCD'
+
+kmp(S, P)
+'''
