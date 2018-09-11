@@ -1,5 +1,4 @@
 # http://ictar.github.io/2015/12/07/%E4%B9%9D%E5%A4%A7%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E5%8F%8A%E5%85%B6Python%E5%AE%9E%E7%8E%B0%E4%B9%8B%E5%A0%86%E6%8E%92%E5%BA%8F/
-# 
 
 left = lambda i: 2*i+1
 right = lambda i: 2*i+2
