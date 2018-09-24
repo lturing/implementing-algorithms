@@ -1,3 +1,5 @@
+# https://en.wikipedia.org/wiki/K-d_tree
+
 import random 
 import numpy as np 
 import matplotlib.pyplot as plt 
