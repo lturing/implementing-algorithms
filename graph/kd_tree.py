@@ -1,3 +1,7 @@
+import random 
+import numpy as np 
+import matplotlib.pyplot as plt 
+
 class Node:
     def __init__(self):
         self.val = 0
@@ -10,16 +14,14 @@ class Node:
         self.bottom_left_y = 0 
         self.top_right_x = 0 
         self.top_right_y = 0 
+
         self.points = []
 
+def generate_kd_tree(dataset):
 
-def kd_tree(dataset):
-    
     def plot(root):
-        import numpy as np 
-        import matplotlib.pyplot as plt 
         stack = [root]
-        stride = 1000
+        stride = 2
         if root:
             # draw global bounding box 
             b_x = root.bottom_left_x 
@@ -27,21 +29,25 @@ def kd_tree(dataset):
             t_x = root.top_right_x 
             t_y = root.top_right_y
 
+            '''
             y = [i for i in np.linspace(b_y, t_y, stride)]
             x = [b_x for i in np.linspace(b_y, t_y, stride)]
             plt.plot(x, y, 'black')
-
             x = [t_x for i in np.linspace(b_y, t_y, stride)]
             plt.plot(x, y, 'black')
-
             x = [i for i in np.linspace(b_x, t_x, stride)]
             y = [b_y for i in np.linspace(b_x, t_x, stride)]
             plt.plot(x, y, 'black')
-
             y = [t_y for i in np.linspace(b_x, t_x, stride)]
             plt.plot(x, y, 'black')
+            '''
 
-        plt.title('kd tree', fontsize=20, fontweight=20, loc='center')
+            plt.xlim(b_x, t_x)
+            plt.ylim(b_y, t_y)
+            plt.tick_params(labelsize=15)
+
+        plt.title('kd tree', fontsize=20, fontweight=80, loc='center')
+
         while stack:
             son = []
             while stack:
@@ -54,18 +60,17 @@ def kd_tree(dataset):
                         x = [i for i in np.linspace(head.bottom_left_x, head.top_right_x, stride)]
                         y = [head.val for i in np.linspace(head.bottom_left_x, head.top_right_x, stride)]
                     plt.plot(x, y)
-
                     if head.points:
                         x = [point[0] for point in head.points]
                         y = [point[1] for point in head.points]
                         plt.scatter(x, y, c='black', marker='.', s=80)
-
                     if head.left:
                         son.append(head.left)
                     if head.right:
                         son.append(head.right)
 
             stack = son 
+
         plt.show()
 
     def generate(split_idx, dataset, root, bbox, feat_len):
@@ -73,9 +78,9 @@ def kd_tree(dataset):
         dataset = sorted(dataset, key=lambda asd:asd[split_idx])
         d_len = len(dataset)
         median = dataset[d_len//2][split_idx] if d_len % 2 == 1 else (dataset[d_len//2-1][split_idx]+dataset[d_len//2][split_idx])/2
-
         left = []
         right = []
+
         for item in dataset:
             if item[split_idx] < median:
                 left.append(item)
@@ -97,7 +102,6 @@ def kd_tree(dataset):
                 new_bbox = [bbox[0], bbox[1], median, bbox[3]]
             else:
                 new_bbox = [bbox[0], bbox[1], bbox[2], median]
-
             generate(split_idx+1, left, root.left, new_bbox, feat_len)
 
         if right:
@@ -106,13 +110,10 @@ def kd_tree(dataset):
                 new_bbox = [median, bbox[1], bbox[2], bbox[3]]
             else:
                 new_bbox = [bbox[0], median, bbox[2], bbox[3]]
-
             generate(split_idx+1, right, root.right, new_bbox, feat_len)
 
-    
     boundbox = [] # bottom_left_x, bottom_left_y, top_right_x, top_right_y
     func = [min, max]
-
     for i in range(4):
         boundbox.append(func[i//2%2]([dataset[j][i%2] for j in range(len(dataset))]))
 
@@ -120,18 +121,14 @@ def kd_tree(dataset):
     for i in range(2):
         add = (boundbox[i+2]-boundbox[i])*delta
         add = 1 if add < 1 else int(add)
-
         boundbox[i] = boundbox[i] - add 
         boundbox[i+2] = boundbox[i+2] + add 
 
     root = Node()
     feat_len = len(dataset[0])
-
     generate(0, dataset, root, boundbox, feat_len)
     plot(root)
 
 
-import random 
-dataset = [(random.randint(1, 30), random.randint(1, 30)) for i in range(20)]
-
-kd_tree(dataset)
+dataset = [(random.randint(1, 30), random.randint(1, 30)) for i in range(50)]
+generate_kd_tree(dataset)
