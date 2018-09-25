@@ -31,22 +31,27 @@ def generate_kd_tree(dataset):
             t_x = root.top_right_x 
             t_y = root.top_right_y
 
-            '''
-            y = [i for i in np.linspace(b_y, t_y, stride)]
-            x = [b_x for i in np.linspace(b_y, t_y, stride)]
-            plt.plot(x, y, 'black')
-            x = [t_x for i in np.linspace(b_y, t_y, stride)]
-            plt.plot(x, y, 'black')
-            x = [i for i in np.linspace(b_x, t_x, stride)]
-            y = [b_y for i in np.linspace(b_x, t_x, stride)]
-            plt.plot(x, y, 'black')
-            y = [t_y for i in np.linspace(b_x, t_x, stride)]
-            plt.plot(x, y, 'black')
-            '''
-
             plt.xlim(b_x, t_x)
             plt.ylim(b_y, t_y)
             plt.tick_params(labelsize=15)
+            plt.xticks([])
+            plt.yticks([])
+            plt.axis('off')
+                     
+            y = [i for i in np.linspace(b_y, t_y, stride)]
+            x = [b_x for i in np.linspace(b_y, t_y, stride)]
+            plt.plot(x, y, 'black')
+
+            x = [t_x for i in np.linspace(b_y, t_y, stride)]
+            plt.plot(x, y, 'black')
+
+            x = [i for i in np.linspace(b_x, t_x, stride)]
+            y = [b_y for i in np.linspace(b_x, t_x, stride)]
+            plt.plot(x, y, 'black')
+
+            y = [t_y for i in np.linspace(b_x, t_x, stride)]
+            plt.plot(x, y, 'black')
+            
 
         plt.title('kd tree', fontsize=20, fontweight=80, loc='center')
 
@@ -61,7 +66,9 @@ def generate_kd_tree(dataset):
                     else:
                         x = [i for i in np.linspace(head.bottom_left_x, head.top_right_x, stride)]
                         y = [head.val for i in np.linspace(head.bottom_left_x, head.top_right_x, stride)]
-                    plt.plot(x, y)
+
+                    plt.plot(x, y, 'black')
+
                     if head.points:
                         x = [point[0] for point in head.points]
                         y = [point[1] for point in head.points]
