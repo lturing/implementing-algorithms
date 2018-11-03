@@ -7,6 +7,8 @@
 - [Tanjar.py](https://github.com/lturing/implementing-algorithms/tree/master/graph/Tanjar.py)
 - [kd tree](https://github.com/lturing/implementing-algorithms/tree/master/graph/kd_tree.py)
 ![](https://raw.githubusercontent.com/lturing/implementing-algorithms/master/photos/kd_tree_1.png)
+- [binary_tree_show](https://github.com/lturing/implementing-algorithms/blob/master/graph/plot_binary_tree.py)
+![](https://raw.githubusercontent.com/lturing/implementing-algorithms/master/photos/binary_tree.png)
 
 ---------------
 
