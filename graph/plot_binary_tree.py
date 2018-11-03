@@ -93,15 +93,15 @@ def plot_tree_by_layer(tree):
             k = plot[i][0]
             cur_x = cur_width * (i + 1)
             if len(plot[i]) == 2:
-                plotNode(axl, '{0},{1}'.format(tree[k].left, tree[k].right), (cur_x, cur_height), (cur_x, cur_height))
+                plotNode(axl, '{0},{1}\n{2}'.format(tree[k].left, tree[k].right, tree[k].weight), (cur_x, cur_height), (cur_x, cur_height))
             else:
                 nex_x = nex_width * cur
                 cur += 1
-                plotNode(axl, '{0},{1}'.format(tree[k].left, tree[k].right), (nex_x, nex_height), (cur_x, cur_height))
+                plotNode(axl, '{0},{1}\n{2}'.format(tree[k].left, tree[k].right, tree[k].weight), (nex_x, nex_height), (cur_x, cur_height))
                 
                 nex_x = nex_width * cur 
                 cur += 1
-                plotNode(axl, '{0},{1}'.format(tree[k].left, tree[k].right), (nex_x, nex_height), (cur_x, cur_height))
+                plotNode(axl, '{0},{1}\n{2}'.format(tree[k].left, tree[k].right, tree[k].weight), (nex_x, nex_height), (cur_x, cur_height))
 
         stack = son 
         cur_depth += 1
