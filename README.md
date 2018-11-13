@@ -19,7 +19,7 @@
 -------------
 
 #### [neural network](https://github.com/lturing/implementing-algorithms/tree/master/nn)
--[vgg16.py](https://github.com/lturing/implementing-algorithms/tree/master/nn/load_vgg16.py)
+- [vgg16.py](https://github.com/lturing/implementing-algorithms/tree/master/nn/load_vgg16.py)
 
 
 #### [paper](https://github.com/lturing/implementing-algorithms/tree/master/paper)
