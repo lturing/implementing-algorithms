@@ -12,6 +12,8 @@ import scipy as scp
 import scipy.misc
 import os
 
+from images_labels_1000 import labels
+
 os.environ['CUDA_VISIBLE_DEVICES'] = '2'
 VGG_MEAN = [103.939, 116.779, 123.68]
 
@@ -108,6 +110,6 @@ if __name__ == '__main__':
     sess.run(init)
 
     res = sess.run(classifier, feed_dict={rgb : img})
-
-    print(res)
+    for item in res:
+        print('predict: {0}'.format(labels[item]))
     
