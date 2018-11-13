@@ -13,7 +13,6 @@ import scipy.misc
 import os
 
 os.environ['CUDA_VISIBLE_DEVICES'] = '2'
-
 VGG_MEAN = [103.939, 116.779, 123.68]
 
 def get_paras(name, paras_name, data_dict):
@@ -58,9 +57,7 @@ def fully_connected(input, name, data_dict):
 def vgg16(rgb):
 
     data_dict = np.load('./vgg16.npy', encoding='latin1').item()
-
     red, green, blue = tf.split(rgb, 3, 3)
-
     input = tf.concat([
                 blue - VGG_MEAN[0],
                 green - VGG_MEAN[1],
@@ -72,7 +69,6 @@ def vgg16(rgb):
 
     res = [input]
     pre = ''
-
     for name in names:
         if 'con' in pre and pre.split('_')[0] != name.split('_')[0]:
             res[-1] = maxPooling(res[-1])
@@ -89,7 +85,8 @@ def vgg16(rgb):
                 tmp = fully_connected(res[-1], name, data_dict)
 
             res.append(tmp)
-        print('after {0}, shape: {1}'.format(name, res[-1].shape))
+            
+        print('after {0} ops, shape: {1}'.format(name, res[-1].shape))
         pre = name
 
     classifier = tf.argmax(res[-1], dimension=1)
@@ -98,14 +95,12 @@ def vgg16(rgb):
 
 if __name__ == '__main__':
 
-    rgb = tf.placeholder('float', shape=[None, 224, 224, 3])
-
     img1 = scp.misc.imread("./test_data/tabby_cat.png")
     img2 = scp.misc.imread('./kobe.jpg')
     skip = 80
     img = img2[0:224, skip:224+skip, :]
     img = np.expand_dims(img, 0)
-
+    rgb = tf.placeholder('float', shape=[None, 224, 224, 3])
     classifier = vgg16(rgb)
 
     init = tf.global_variables_initializer()
@@ -115,3 +110,4 @@ if __name__ == '__main__':
     res = sess.run(classifier, feed_dict={rgb : img})
 
     print(res)
+    
