@@ -5,16 +5,17 @@ reference
 https://github.com/machrisaa/tensorflow-vgg
 https://github.com/MarvinTeichmann/tensorflow-fcn
 '''
+
 import numpy as np
 import tensorflow as tf
 
 import scipy as scp
 import scipy.misc
 import os
-
 from images_labels_1000 import labels
 
 os.environ['CUDA_VISIBLE_DEVICES'] = '2'
+
 VGG_MEAN = [103.939, 116.779, 123.68]
 
 def get_paras(name, paras_name, data_dict):
@@ -22,12 +23,12 @@ def get_paras(name, paras_name, data_dict):
     paras = []
     for i in range(len(paras_name)):
         init = tf.constant_initializer(value=data_dict[name][i], dtype=tf.float32)
-        shape = data_dict[name][i].shape 
+        shape = data_dict[name][i].shape
 
         var = tf.get_variable(name=paras_name[i], initializer=init, shape=shape)
         paras.append(var)
 
-    return paras 
+    return paras
 
 def conv2d(input, name, data_dict):
     paras_name = ['filter', 'bias']
@@ -59,6 +60,7 @@ def fully_connected(input, name, data_dict):
 def vgg16(rgb):
 
     data_dict = np.load('./vgg16.npy', encoding='latin1').item()
+
     red, green, blue = tf.split(rgb, 3, 3)
     input = tf.concat([
                 blue - VGG_MEAN[0],
@@ -71,6 +73,7 @@ def vgg16(rgb):
 
     res = [input]
     pre = ''
+
     for name in names:
         if 'con' in pre and pre.split('_')[0] != name.split('_')[0]:
             res[-1] = maxPooling(res[-1])
@@ -87,29 +90,37 @@ def vgg16(rgb):
                 tmp = fully_connected(res[-1], name, data_dict)
 
             res.append(tmp)
-            
-        print('after {0} ops, shape: {1}'.format(name, res[-1].shape))
+        print('after {0}, shape: {1}'.format(name, res[-1].shape))
         pre = name
 
     classifier = tf.argmax(res[-1], dimension=1)
 
-    return classifier 
+    return classifier
 
 if __name__ == '__main__':
 
-    img1 = scp.misc.imread("./test_data/tabby_cat.png")
-    img2 = scp.misc.imread('./kobe.jpg')
-    skip = 80
-    img = img2[0:224, skip:224+skip, :]
-    img = np.expand_dims(img, 0)
     rgb = tf.placeholder('float', shape=[None, 224, 224, 3])
+
+    img_path = ['./tabby_cat.png', './kobe.jpg']
+    vec = []
+    for path in img_path:
+        img = scp.misc.imread(path)
+        skip = 0
+        img = img[0:224, skip:224+skip, :]
+        img = np.expand_dims(img, 0)
+        vec.append(img)
+
+    imgs = np.concatenate(vec, 0)
+
     classifier = vgg16(rgb)
 
     init = tf.global_variables_initializer()
     sess = tf.Session()
     sess.run(init)
 
-    res = sess.run(classifier, feed_dict={rgb : img})
-    for item in res:
-        print('predict: {0}'.format(labels[item]))
-    
+    res = sess.run(classifier, feed_dict={rgb : imgs})
+    #print(res)
+
+    for i in range(len(res)):
+        print('{0} is classified to "{1}"'.format(img_path[i], labels[res[i]]))
+
