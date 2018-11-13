@@ -99,8 +99,6 @@ def vgg16(rgb):
 
 if __name__ == '__main__':
 
-    rgb = tf.placeholder('float', shape=[None, 224, 224, 3])
-
     img_path = ['./tabby_cat.png', './kobe.jpg']
     vec = []
     for path in img_path:
@@ -111,13 +109,13 @@ if __name__ == '__main__':
         vec.append(img)
 
     imgs = np.concatenate(vec, 0)
-
+    rgb = tf.placeholder('float', shape=[None, 224, 224, 3])
     classifier = vgg16(rgb)
-
+    
     init = tf.global_variables_initializer()
     sess = tf.Session()
     sess.run(init)
-
+    
     res = sess.run(classifier, feed_dict={rgb : imgs})
     #print(res)
 
