@@ -4,6 +4,7 @@
 reference
 https://github.com/machrisaa/tensorflow-vgg
 https://github.com/MarvinTeichmann/tensorflow-fcn
+https://www.jianshu.com/p/ab0d38725f88
 '''
 
 import numpy as np
