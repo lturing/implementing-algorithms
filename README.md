@@ -1,3 +1,5 @@
+<script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"> </script>
+
 # implementing-algorithms
 > This repositories will record my own implements of algorithms which I find interesting and fun!
 
