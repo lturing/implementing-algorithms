@@ -11,9 +11,10 @@
 ![](https://raw.githubusercontent.com/lturing/implementing-algorithms/master/photos/binary_tree.png)
 
 - [fft_sample.py](https://github.com/lturing/implementing-algorithms/tree/master/graph/fft_sample.py)
-| https://raw.githubusercontent.com/lturing/implementing-algorithms/master/photos/curve_for_fft.png  | https://raw.githubusercontent.com/lturing/implementing-algorithms/master/photos/fft_ever_1.png  |
+
+| ![](https://raw.githubusercontent.com/lturing/implementing-algorithms/master/photos/curve_for_fft.png)  | ![](https://raw.githubusercontent.com/lturing/implementing-algorithms/master/photos/fft_ever_1.png)  |
 | :------------: | :------------: |
-| https://raw.githubusercontent.com/lturing/implementing-algorithms/master/photos/fft_ever_2.png  |  https://raw.githubusercontent.com/lturing/implementing-algorithms/master/photos/fft_ever_3.png |
+| ![](https://raw.githubusercontent.com/lturing/implementing-algorithms/master/photos/fft_ever_2.png)  | ![]( https://raw.githubusercontent.com/lturing/implementing-algorithms/master/photos/fft_ever_3.png) |
 
 
 ---------------
