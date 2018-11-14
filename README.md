@@ -16,6 +16,15 @@
 | :------------: | :------------: |
 | ![](https://raw.githubusercontent.com/lturing/implementing-algorithms/master/photos/fft_ever_2.png)  | ![]( https://raw.githubusercontent.com/lturing/implementing-algorithms/master/photos/fft_ever_3.png) |
 
+> 从上图可以看出抽样频率不会改变频幅峰值出现的f(由抽样定理可证明)
+其中，频幅峰值最大的四个点(64, 72, 96, 192)对应时域4个基本信号(周期为18, 16, 12, 6)，由公共周期(周期的最小公倍数)为144，重复8次。
+- $$\frac{144 \times 8}{6}  = 192$$  6  --> 192       
+>
+- $$\frac{144 \times 8}{12} = 96 $$  12 --> 96
+>
+- $$\frac{144 \times 8}{16} = 72 $$  16 --> 72
+>
+- $$\frac{144 \times 8}{18} = 64 $$  18 --> 64
 
 ---------------
 
