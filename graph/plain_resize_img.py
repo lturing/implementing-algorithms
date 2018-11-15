@@ -48,4 +48,42 @@ cv2.imshow('src', src)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 
+'''
+import numpy as np 
+import cv2 
 
+src = cv2.imread('E:/dog.jpg')
+src_h, src_w, _ = src.shape 
+
+ratio_h = 2.0
+ratio_w = 2.0 
+
+#dst = np.zeros((int(src_h * ratio_h), int(src_w * ratio_w), 3), dtype=np.uint8)
+#dst_h, dst_w, _ = dst.shape
+
+dst_h, dst_w = int(src_h * ratio_h), int(src_w * ratio_w)
+print(src_h, src_w)
+print(dst_h, dst_w)
+
+scale_x = src_w / dst_w
+scale_y = src_h / dst_h  
+
+dst_x = np.arange(dst_w)
+dst_y = np.arange(dst_h)
+
+src_x = (dst_x + 0.5) * scale_x - 0.5
+src_y = (dst_y + 0.5) * scale_y - 0.5
+
+src_x_0 = np.array(src_x, np.int)
+src_y_0 = np.array(src_y, np.int)
+src_x_1 = src_x_0.clip(max = src_w - 1)
+src_y_1 = src_y_0.clip(max = src_h - 1)
+
+
+
+value0 = (src_x_1 - src_x) * src[src_y_0, src_x_0, :] + (src_x - src_x_0) * src[src_y_0, src_x_1, :]
+value1 = (src_x_1 - src_y) * src[src_y_1, src_x_0, :] + (src_x - src_x_0) * src[src_y_1, src_x_1, :]
+
+dst = (src_y_1 - src_y) * value0 + (src_y - src_y_0) * value1 
+dst = np.array(dst, dtype=np.uint8)
+'''
