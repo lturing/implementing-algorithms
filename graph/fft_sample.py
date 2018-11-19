@@ -96,10 +96,14 @@ def pltt():
     marker(max_idx, x, plt)
     
     fft = np.fft.rfft(x)
+    amp = np.log(np.abs(fft))
+    
+    '''
     amp = []
     for item in fft:
         tmp = math.sqrt(math.pow(item.real, 2) + math.pow(item.imag, 2))
         amp.append(math.log(tmp))
+    '''
 
     max_idx = []
     for i in range(len(amp)):
