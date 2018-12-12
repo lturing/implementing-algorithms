@@ -107,143 +107,78 @@
 
     </body>
     <script>
-        function find(){
-            var input = document.getElementById('text').value;
-            input = input.trim();
-            var check = input.split('_');
-            var reg = /^[0-9]{4}$/
-            //000-[0000,0879] 001-[0000,0720] 002-[0000,0825] 003-[0000,0590] 004-[0000,0927] 005-[0000,0875] 006-[0000,1396] 007-[0000,1009]
-            var validd = {'000':['0000', '0879'], '001':['0000', '0720'], '002':['0000', '0825'], '003':['0000', '0590'], '004':['0000', '0927'], '005':['0000', '0875'], '006':['0000', '1396'], '007':['0000', '1009']}
-            if (check.length == 2 && check[0] in validd && reg.test(check[1]) && check[1] >= validd[check[0]][0] && check[1] <= validd[check[0]][1] && document.getElementById(input) == null){
-                $.ajax({
-                    url:        "/find",
-                    type:       "POST",
-                    datatype:   "json",
-                    data:       {'idx': input},
-                    success: function(res){
-                        res = eval("(" + res + ")");
-                        var tbody = document.getElementById('tbody');
-                        
-                        var row = tbody.insertRow(0);
+	function find(){
+		var input = document.getElementById('text').value;
+		input = input.trim();
+		var tbody = document.getElementById('tbody');
+		var names = ['ch', 'en'];
+		var check = input.split('_');
+		var reg = /^[0-9]{4}$/
+		//000-[0000,0879] 001-[0000,0720] 002-[0000,0825] 003-[0000,0590] 004-[0000,0927] 005-[0000,0875] 006-[0000,1396] 007-[0000,1009]
+		var validd = {'000':['0000', '0879'], '001':['0000', '0720'], '002':['0000', '0825'], '003':['0000', '0590'], '004':['0000', '0927'], '005':['0000', '0875'], '006':['0000', '1396'], '007':['0000', '1009']}
+		if (check.length == 2 && check[0] in validd && reg.test(check[1]) && check[1] >= validd[check[0]][0] && check[1] <= validd[check[0]][1] && document.getElementById(input + '_en') == null){
+			$.ajax({
+				url:        "/find",
+				type:       "POST",
+				datatype:   "json",
+				data:       {'idx': input},
+				success: function(res){
+					res = eval("(" + res + ")");
+					for (var i = 0; i < 2; i ++){
+						var row = tbody.insertRow(0);
+						row.setAttribute('id', input + '_' + names[i]);
 
-                        var h2 = document.createElement('h2');
-                        h2.textContent = input + ': ' + 'ch_melspectrogram'
-                        var td = document.createElement('td');
-                        td.appendChild(h2);
-                        row.appendChild(td);
+						var h2 = document.createElement('h2');
+						h2.textContent = input + ': ' + names[i] + '_melspectron';
+						var td = document.createElement('td');
+						td.appendChild(h2);
+						row.appendChild(td);
 
-                        var img = document.createElement('img');
-                        img.src = 'data:image/png;charset=utf-8;base64, ' + res['ch_mel']
-                        var td = document.createElement('td');
-                        td.appendChild(img);
-                        row.appendChild(td);
+						var img = document.createElement('img');
+						img.src = 'data:image/png;charset=utf-8;base64, ' + res[names[i] + '_mel']
+						var td = document.createElement('td');
+						td.appendChild(img);
+						row.appendChild(td);
 
+						var td = document.createElement('td');
+						var audio = document.createElement('audio');
+						audio.setAttribute('controls', '');
+						var wav = document.createElement('source');
+						wav.src = res[names[i]];
+						audio.appendChild(wav);
+						td.appendChild(audio);
+						row.appendChild(td);
 
-                        var td = document.createElement('td');
-                        var audio = document.createElement('audio');
-                        audio.setAttribute('controls', '');
-                        var wav = document.createElement('source');
-                        wav.src = res['ch'];
-                        audio.appendChild(wav);
-                        td.appendChild(audio);
-                        row.appendChild(td);
-
-                        var td = document.createElement('td');
-                        var txt = document.createElement('h4');
-                        txt.textContent = res['ch_txt'];
-                        td.appendChild(txt);
-                        row.appendChild(td);
-
-
-                        
-                        var row = tbody.insertRow(0);
-                        
-                        var h2 = document.createElement('h2');
-                        h2.textContent = input + ': ' + 'en_melspectrogram'
-                        var td = document.createElement('td');
-                        td.appendChild(h2);
-                        row.appendChild(td);
-
-                        var img = document.createElement('img');
-                        img.src = 'data:image/png;charset=utf-8;base64, ' + res['en_mel']
-                        var td = document.createElement('td');
-                        td.appendChild(img);
-                        row.appendChild(td);
-
-                        var td = document.createElement('td');
-                        var audio = document.createElement('audio');
-                        audio.setAttribute('id', input);
-                        audio.setAttribute('controls', '');
-                        var wav = document.createElement('source');
-                        wav.src = res['en'];
-                        audio.appendChild(wav);
-                        td.appendChild(audio);
-                        row.appendChild(td);
-                        
-                        var td = document.createElement('td');
-                        var txt = document.createElement('h4');
-                        txt.textContent = res['en_txt'];
-                        td.appendChild(txt);
-                        row.appendChild(td);
-
-
-                       
-                           /*
-dy.insertRow();
-                        var td = document.createElement('td');
-                        var audio = document.createElement('audio');
-                        audio.setAttribute('controls', '');
-                        var wav = document.createElement('source');
-                        wav.src = res['en'];
-                        audio.appendChild(wav);
-                        td.appendChild(audio);
-                        row.appendChild(td);
-
-                        var td = document.createElement('td');
-                        var txt = document.createElement('em');
-                        txt.innerText = en_txt;
-                        td.appendChild(txt);
-                        row.appendChild(td);
-                        var container = document.getElementById('wav');
-                        var audio = document.createElement('audio');
-                        audio.setAttribute('controls', '');
-                        var wav = document.createElement('source');
-                        wav.src = res['en'];
-                        audio.appendChild(wav);
-                        var p = document.createElement('p');
-                        p.appendChild(audio);
-                        var txt = document.createElement('em');
-                        txt.textContent = res['en_txt'];
-                        p.appendChild(txt);
-                        container.appendChild(p);
-
-                        var audio = document.createElement('audio');
-                        audio.setAttribute('controls', '');
-                        var wav = document.createElement('source');
-                        wav.src = res['ch'];
-                        audio.appendChild(wav);
-                        var p = document.createElement('p');
-                        p.appendChild(audio);
-                        var txt = document.createElement('em');
-                        txt.textContent = res['ch_txt'];
-                        p.appendChild(txt);
-                        container.appendChild(p);
-                        */
-                    },
-                    error: function(res){
-                        alert('some errors happend.');
-                    }
-                })
-            }
-            else{
-                if (document.getElementById(input)){
-                    alert('The element already exist.');
-                }
-                else{
-                    alert("unvalid parameter: " + input);
-                }
-            }
-        }
+						var td = document.createElement('td');
+						var txt = document.createElement('h4');
+						txt.textContent = res[names[i] + '_txt'];
+						td.appendChild(txt);
+						row.appendChild(td);
+					}
+				},
+				error: function(res){
+					alert("Something went really wrong, and we can't process it");
+				}
+			})
+		}
+		else{
+			if (document.getElementById(input+'_en')){
+				for (var i = 0; i < 2; i ++){
+					var hand = document.getElementById(input + '_' + names[i]);
+					hand.remove();
+					var row = tbody.insertRow(0);
+					row.setAttribute('id', input + '_' + names[i]);
+					for (var j = 0; j < hand.cells.length; j ++ ){
+						var cell = row.insertCell(j);
+						cell.appendChild(hand.cells[j].firstElementChild);
+					}
+				}
+			}
+			else{
+				alert("unvalid parameter: " + input);
+			}
+		}
+	}
     </script>
     <script>
         function clear_wav(){
