@@ -74,7 +74,7 @@ td.appendChild(img);
 
 ```
 
-#### table hightlight
+#### html table hightlight
 ```js
 res = eval("(" + res + ")"); // res is the ajax response, success: function(res){}
 var tbody = document.getElementById('tbody');
