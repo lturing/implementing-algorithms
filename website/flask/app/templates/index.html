@@ -1,0 +1,132 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>generate tts</title>
+        <script src="https://libs.baidu.com/jquery/1.7.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <div>
+            <p> welcome </p>
+            <div id='wav'>
+
+                <input id="text" type="text" style="width:50%;height:50px;" value="input text to generate."><button onclick="generate_tts()" style="height:50px">generate speech</button>
+                <br/>
+                <!--
+                <audio controls> 
+                    <source src="">
+                </audio>
+                -->
+            </div>
+
+            <!--
+            <button onclick="change()">点击导入</button>
+            <button onclick="draw_canvas()">draw image</button>
+            -->
+
+        </div>
+
+    </body>
+    <script>
+        function generate_tts(){
+            var input = document.getElementById('text').value;
+            input = input.trim();
+            if (input.length > 0){
+                $.ajax({
+                    url:    "/generate_tts",
+                    type:   "POST",
+                    dataType: "json",
+                    data:{'txt':input},
+                    success:function(res){
+                        var container = document.getElementById('wav');
+                        while(true){
+				            var p = container.getElementsByTagName('p');
+				            if (p.length > 0){
+					            container.removeChild(p[0]);
+				            }
+				            else{
+					            break;
+				            }
+			            }
+                        
+                        var audio = document.createElement('audio');
+                        audio.setAttribute('controls', '');
+                        var wav = document.createElement('source');
+                        wav.src = res['wav'];
+                        audio.appendChild(wav);
+                        var p = document.createElement('p');
+                        p.appendChild(audio);
+                        container.appendChild(p);
+
+                        var img = document.createElement('img');
+                        img.src = res['img'];
+                        var p = document.createElement('p');
+                        p.appendChild(img);
+                        container.appendChild(p);
+
+                    },
+                    error:function(res){
+                        console.log('error');
+                    }
+                })
+            }
+        }
+    </script>
+    <script>
+        function sleep(millseconds){
+            var waitUntil = new Date().getTime() + millseconds;
+            while(new Date().getTime() < waitUntil) true;
+        }
+    </script>
+    <script>
+        function change(){
+            var container = document.getElementById('wav');
+            var audio = container.getElementsByTagName('audio')[0];
+            container.removeChild(audio);
+
+            sleep(2);
+            sleep(2000);
+            //setTimeout(function(){;}, 7000);
+
+            audio = document.createElement('audio');
+            audio.setAttribute('controls', '');
+
+            var wav = document.createElement('source');
+            wav.src = "https://ttsdemos.github.io/paper1_demos/us/B1.wav";
+
+            audio.appendChild(wav);
+            container.appendChild(audio);
+
+        }
+    </script>
+    <script>
+        function draw_canvas(){
+
+            var img = document.createElement('img');
+            img.src = "./dog.jpg";
+            var p = document.createElement('p');
+            p.appendChild(img)
+            var container = document.getElementById('wav');
+            container.appendChild(p);
+
+            /*
+            var canvas = document.createElement('canvas');
+            var context = canvas.getContext('2d');
+            var img = new Image();
+
+            img.onload = function(){
+                context.drawImage(img, 0, 0, 200, 200);
+            }
+
+            img.src = "./dog.jpg";
+
+            var container = document.getElementById('wav');
+
+            var p = document.createElement('p');
+            p.appendChild(canvas);
+            container.appendChild(p);
+            */
+        }
+    </script>
+</html>
+
+
