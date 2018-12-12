@@ -1,0 +1,377 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>search clips</title>
+        <script src="https://libs.baidu.com/jquery/1.7.1/jquery.min.js"></script>
+        <style>
+            button {background: #28d; padding: 9px 14px; margin-left: 8px; border: none; outline: none;
+                color: #fff; font-size: 14px; border-radius: 4px; cursor: pointer;}
+            button:hover {box-shadow: 0 1px 2px rgba(0,0,0,.15); opacity: 0.9;}
+            button:active {background: #29f;}
+            button[disabled] {opacity: 0.4; cursor: default}
+        </style>
+    </head>
+    <body>
+        <div align="center">
+            <h1>Welcome</h2>
+            <!--
+            <p>000-[0000,0879] 001-[0000,0720] 002-[0000,0825] 003-[0000,0590] 004-[0000,0927] 005-[0000,0875] 006-[0000,1396] 007-[0000,1009]</p>
+            -->
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th><b>编号</b></th>
+                        <th>起点</th>
+                        <th>终点</th>
+                        <th><b>编号</b></th>
+                        <th>起点</th>
+                        <th>终点</th>
+                        <th><b>编号</b></th>
+                        <th>起点</th>
+                        <th>终点</th>
+                        <th><b>编号</b></th>
+                        <th>起点</th>
+                        <th>终点</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><b>000</b></td>
+                        <td>0000</td>
+                        <td>0879</td>
+                        <td><b>001</b></td>
+                        <td>0000</td>
+                        <td>0720</td>
+                        <td><b>002</b></td>
+                        <td>0000</td>
+                        <td>0825</td>
+                        <td><b>003</b></td>
+                        <td>0000</td>
+                        <td>0590</td>
+                    </tr>
+                    <tr>
+                        <td><b>004</b></td>
+                        <td>0000</td>
+                        <td>0927</td>
+                        <td><b>005</b></td>
+                        <td>0000</td>
+                        <td>0875</td>
+                        <td><b>006</b></td>
+                        <td>0000</td>
+                        <td>1396</td>
+                        <td><b>007</b></td>
+                        <td>0000</td>
+                        <td>1009</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3>input carefully</h3>
+            <div id='wav'>
+
+                <input id="text" type="text" style="width:50%;height:50px;" value="001_0046">
+                <button onclick="find()" style="height:50px">Find</button>
+                <button onclick="clear_wav()" style="height:50px">Clear</button>
+                <br/>
+                <br/>
+                <table id='table'>
+                    <!--
+                    <thead>
+                        <tr>
+                            <td>clip</td>
+                            <td>subtitle</td>
+                        </tr>
+                    <thead>
+                    -->
+                    <tbody id='tbody'>
+                        <!--
+                        <tr>
+                            <td>hello</td>
+                            <td>world</td>
+                        </tr>
+                        -->
+                    </tbody>
+                </table>
+                <!--
+                <audio controls> 
+                    <source src="">
+                </audio>
+                -->
+            </div>
+
+            <!--
+            <button onclick="change()">点击导入</button>
+            <button onclick="draw_canvas()">draw image</button>
+            -->
+
+        </div>
+
+    </body>
+    <script>
+        function find(){
+            var input = document.getElementById('text').value;
+            input = input.trim();
+            var check = input.split('_');
+            var reg = /^[0-9]{4}$/
+            //000-[0000,0879] 001-[0000,0720] 002-[0000,0825] 003-[0000,0590] 004-[0000,0927] 005-[0000,0875] 006-[0000,1396] 007-[0000,1009]
+            var validd = {'000':['0000', '0879'], '001':['0000', '0720'], '002':['0000', '0825'], '003':['0000', '0590'], '004':['0000', '0927'], '005':['0000', '0875'], '006':['0000', '1396'], '007':['0000', '1009']}
+            if (check.length == 2 && check[0] in validd && reg.test(check[1]) && check[1] >= validd[check[0]][0] && check[1] <= validd[check[0]][1] && document.getElementById(input) == null){
+                $.ajax({
+                    url:        "/find",
+                    type:       "POST",
+                    datatype:   "json",
+                    data:       {'idx': input},
+                    success: function(res){
+                        res = eval("(" + res + ")");
+                        var tbody = document.getElementById('tbody');
+                        
+                        var row = tbody.insertRow(0);
+
+                        var h2 = document.createElement('h2');
+                        h2.textContent = input + ': ' + 'ch_melspectrogram'
+                        var td = document.createElement('td');
+                        td.appendChild(h2);
+                        row.appendChild(td);
+
+                        var img = document.createElement('img');
+                        img.src = 'data:image/png;charset=utf-8;base64, ' + res['ch_mel']
+                        var td = document.createElement('td');
+                        td.appendChild(img);
+                        row.appendChild(td);
+
+
+                        var td = document.createElement('td');
+                        var audio = document.createElement('audio');
+                        audio.setAttribute('controls', '');
+                        var wav = document.createElement('source');
+                        wav.src = res['ch'];
+                        audio.appendChild(wav);
+                        td.appendChild(audio);
+                        row.appendChild(td);
+
+                        var td = document.createElement('td');
+                        var txt = document.createElement('h4');
+                        txt.textContent = res['ch_txt'];
+                        td.appendChild(txt);
+                        row.appendChild(td);
+
+
+                        
+                        var row = tbody.insertRow(0);
+                        
+                        var h2 = document.createElement('h2');
+                        h2.textContent = input + ': ' + 'en_melspectrogram'
+                        var td = document.createElement('td');
+                        td.appendChild(h2);
+                        row.appendChild(td);
+
+                        var img = document.createElement('img');
+                        img.src = 'data:image/png;charset=utf-8;base64, ' + res['en_mel']
+                        var td = document.createElement('td');
+                        td.appendChild(img);
+                        row.appendChild(td);
+
+                        var td = document.createElement('td');
+                        var audio = document.createElement('audio');
+                        audio.setAttribute('id', input);
+                        audio.setAttribute('controls', '');
+                        var wav = document.createElement('source');
+                        wav.src = res['en'];
+                        audio.appendChild(wav);
+                        td.appendChild(audio);
+                        row.appendChild(td);
+                        
+                        var td = document.createElement('td');
+                        var txt = document.createElement('h4');
+                        txt.textContent = res['en_txt'];
+                        td.appendChild(txt);
+                        row.appendChild(td);
+
+
+                       
+                           /*
+dy.insertRow();
+                        var td = document.createElement('td');
+                        var audio = document.createElement('audio');
+                        audio.setAttribute('controls', '');
+                        var wav = document.createElement('source');
+                        wav.src = res['en'];
+                        audio.appendChild(wav);
+                        td.appendChild(audio);
+                        row.appendChild(td);
+
+                        var td = document.createElement('td');
+                        var txt = document.createElement('em');
+                        txt.innerText = en_txt;
+                        td.appendChild(txt);
+                        row.appendChild(td);
+                        var container = document.getElementById('wav');
+                        var audio = document.createElement('audio');
+                        audio.setAttribute('controls', '');
+                        var wav = document.createElement('source');
+                        wav.src = res['en'];
+                        audio.appendChild(wav);
+                        var p = document.createElement('p');
+                        p.appendChild(audio);
+                        var txt = document.createElement('em');
+                        txt.textContent = res['en_txt'];
+                        p.appendChild(txt);
+                        container.appendChild(p);
+
+                        var audio = document.createElement('audio');
+                        audio.setAttribute('controls', '');
+                        var wav = document.createElement('source');
+                        wav.src = res['ch'];
+                        audio.appendChild(wav);
+                        var p = document.createElement('p');
+                        p.appendChild(audio);
+                        var txt = document.createElement('em');
+                        txt.textContent = res['ch_txt'];
+                        p.appendChild(txt);
+                        container.appendChild(p);
+                        */
+                    },
+                    error: function(res){
+                        alert('some errors happend.');
+                    }
+                })
+            }
+            else{
+                if (document.getElementById(input)){
+                    alert('The element already exist.');
+                }
+                else{
+                    alert("unvalid parameter: " + input);
+                }
+            }
+        }
+    </script>
+    <script>
+        function clear_wav(){
+            tbody = document.getElementById('tbody');
+            while(true){
+                if (tbody.rows.length > 0){
+                    tbody.deleteRow(0);
+                }
+                else{
+                    break;
+                }
+            }
+            /*
+            var container = document.getElementById('wav');
+            while(true){
+                var p = container.getElementsByTagName('p');
+                if (p.length > 0){
+                    container.removeChild(p[0]);
+                }
+                else{
+                    break;
+                }
+            }
+            */
+        }
+    </script>
+    <script>
+        function generate_tts(){
+            var input = document.getElementById('text').value;
+            input = input.trim();
+            if (input.length > 0){
+                $.ajax({
+                    url:    "/generate_tts",
+                    type:   "POST",
+                    dataType: "json",
+                    data:{'txt':input},
+                    success:function(res){
+                        var container = document.getElementById('wav');
+                        while(true){
+				            var p = container.getElementsByTagName('p');
+				            if (p.length > 0){
+					            container.removeChild(p[0]);
+				            }
+				            else{
+					            break;
+				            }
+			            }
+                        
+                        var audio = document.createElement('audio');
+                        audio.setAttribute('controls', '');
+                        var wav = document.createElement('source');
+                        wav.src = res['wav'];
+                        audio.appendChild(wav);
+                        var p = document.createElement('p');
+                        p.appendChild(audio);
+                        var txt = document.createElement('p')
+                        container.appendChild(p);
+
+                        var img = document.createElement('img');
+                        img.src = res['img'];
+                        var p = document.createElement('p');
+                        p.appendChild(img);
+                        container.appendChild(p);
+
+                    },
+                    error:function(res){
+                        console.log('error');
+                    }
+                })
+            }
+        }
+    </script>
+    <script>
+        function sleep(millseconds){
+            var waitUntil = new Date().getTime() + millseconds;
+            while(new Date().getTime() < waitUntil) true;
+        }
+    </script>
+    <script>
+        function change(){
+            var container = document.getElementById('wav');
+            var audio = container.getElementsByTagName('audio')[0];
+            container.removeChild(audio);
+
+            sleep(2);
+            sleep(2000);
+            //setTimeout(function(){;}, 7000);
+
+            audio = document.createElement('audio');
+            audio.setAttribute('controls', '');
+
+            var wav = document.createElement('source');
+            wav.src = "https://ttsdemos.github.io/paper1_demos/us/B1.wav";
+
+            audio.appendChild(wav);
+            container.appendChild(audio);
+
+        }
+    </script>
+    <script>
+        function draw_canvas(){
+
+            var img = document.createElement('img');
+            img.src = "./dog.jpg";
+            var p = document.createElement('p');
+            p.appendChild(img)
+            var container = document.getElementById('wav');
+            container.appendChild(p);
+
+            /*
+            var canvas = document.createElement('canvas');
+            var context = canvas.getContext('2d');
+            var img = new Image();
+
+            img.onload = function(){
+                context.drawImage(img, 0, 0, 200, 200);
+            }
+
+            img.src = "./dog.jpg";
+
+            var container = document.getElementById('wav');
+
+            var p = document.createElement('p');
+            p.appendChild(canvas);
+            container.appendChild(p);
+            */
+        }
+    </script>
+</html>
+
+

@@ -1,0 +1,67 @@
+ * Serving Flask app "app" (lazy loading)
+ * Environment: production
+   WARNING: Do not use the development server in a production environment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+ * Running on http://10.5.1.49:1024/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 139-352-926
+10.5.0.239 - - [11/Dec/2018 09:58:56] "[37mGET / HTTP/1.1[0m" 200 -
+10.5.0.205 - - [11/Dec/2018 09:59:30] "[37mGET / HTTP/1.1[0m" 200 -
+10.5.0.205 - - [11/Dec/2018 09:59:30] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+10.5.0.205 - - [11/Dec/2018 09:59:33] "[37mPOST /find HTTP/1.1[0m" 200 -
+10.5.0.205 - - [11/Dec/2018 09:59:38] "[37mGET /movies/Kung.Fu.Panda.2008.BluRay.720p.x264.AC3.4Audios/clips/001_0046_en.wav HTTP/1.1[0m" 200 -
+10.5.0.239 - - [11/Dec/2018 09:59:55] "[37mGET / HTTP/1.1[0m" 200 -
+10.5.0.239 - - [11/Dec/2018 09:59:57] "[37mPOST /find HTTP/1.1[0m" 200 -
+10.5.0.239 - - [11/Dec/2018 10:01:44] "[37mGET / HTTP/1.1[0m" 200 -
+10.5.0.239 - - [11/Dec/2018 10:01:46] "[37mPOST /find HTTP/1.1[0m" 200 -
+10.5.0.239 - - [11/Dec/2018 20:39:25] "[37mPOST /find HTTP/1.1[0m" 200 -
+10.5.0.239 - - [11/Dec/2018 20:39:25] "[37mGET /movies/Kung.Fu.Panda.2008.BluRay.720p.x264.AC3.4Audios/clips/001_0047_ch.wav HTTP/1.1[0m" 200 -
+10.5.0.239 - - [11/Dec/2018 20:39:25] "[37mGET /movies/Kung.Fu.Panda.2008.BluRay.720p.x264.AC3.4Audios/clips/001_0047_en.wav HTTP/1.1[0m" 200 -
+10.5.0.239 - - [11/Dec/2018 20:39:39] "[37mPOST /find HTTP/1.1[0m" 200 -
+10.5.0.239 - - [11/Dec/2018 20:39:49] "[1m[35mPOST /find HTTP/1.1[0m" 500 -
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 2309, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 2295, in wsgi_app
+    response = self.handle_exception(e)
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1741, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/spurs/website/movie/app/views.py", line 143, in find
+    ret = plot_im(fpaths)
+  File "/home/spurs/website/movie/app/views.py", line 77, in plot_im
+    mel = get_spectrograms(fpaths[k])
+  File "/home/spurs/website/movie/app/views.py", line 30, in get_spectrograms
+    y, sr = librosa.load(fpath, sr=sr) # Audio will be automatically resampled to the given rate
+  File "/usr/local/lib/python3.5/dist-packages/librosa/core/audio.py", line 112, in load
+    with audioread.audio_open(os.path.realpath(path)) as input_file:
+  File "/usr/local/lib/python3.5/dist-packages/audioread/__init__.py", line 80, in audio_open
+    return rawread.RawAudioFile(path)
+  File "/usr/local/lib/python3.5/dist-packages/audioread/rawread.py", line 61, in __init__
+    self._fh = open(filename, 'rb')
+FileNotFoundError: [Errno 2] No such file or directory: '/media/disk2/spurs/movie/movies/Kung.Fu.Panda.2008.BluRay.720p.x264.AC3.4Audios/clips/001_004A_en.wav'
+10.5.0.239 - - [11/Dec/2018 20:40:06] "[37mPOST /find HTTP/1.1[0m" 200 -
+10.5.0.239 - - [11/Dec/2018 20:40:06] "[37mGET /movies/Kung.Fu.Panda.2008.BluRay.720p.x264.AC3.4Audios/clips/001_0049_ch.wav HTTP/1.1[0m" 200 -
+10.5.0.239 - - [11/Dec/2018 20:40:06] "[37mGET /movies/Kung.Fu.Panda.2008.BluRay.720p.x264.AC3.4Audios/clips/001_0049_en.wav HTTP/1.1[0m" 200 -
+10.5.0.239 - - [11/Dec/2018 20:45:53] "[37mGET / HTTP/1.1[0m" 200 -
+10.5.0.239 - - [11/Dec/2018 20:46:39] "[37mPOST /find HTTP/1.1[0m" 200 -
+10.5.0.239 - - [11/Dec/2018 20:46:39] "[37mGET /movies/Kung.Fu.Panda.2008.BluRay.720p.x264.AC3.4Audios/clips/001_0720_en.wav HTTP/1.1[0m" 200 -
+10.5.0.239 - - [11/Dec/2018 20:46:39] "[37mGET /movies/Kung.Fu.Panda.2008.BluRay.720p.x264.AC3.4Audios/clips/001_0720_ch.wav HTTP/1.1[0m" 200 -
+10.5.0.239 - - [11/Dec/2018 20:46:52] "[37mPOST /find HTTP/1.1[0m" 200 -
+10.5.0.239 - - [11/Dec/2018 20:46:52] "[37mGET /movies/Kung.Fu.Panda.2008.BluRay.720p.x264.AC3.4Audios/clips/001_0710_ch.wav HTTP/1.1[0m" 200 -
+10.5.0.239 - - [11/Dec/2018 20:46:52] "[37mGET /movies/Kung.Fu.Panda.2008.BluRay.720p.x264.AC3.4Audios/clips/001_0710_en.wav HTTP/1.1[0m" 200 -
