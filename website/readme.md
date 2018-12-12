@@ -15,7 +15,7 @@ def custom_static(filename):
     return send_from_directory('/media/disk2/spurs/movie/movies', filename)
 ```
 
-> then go the http:site/movies/filename to visit.
+> then go the http:ip:port/movies/filename to visit.
 
 - solving flask crashing when using matplotlib
 > RuntimeError: main thread is not in main loop with Matplotlib and Flask. 
