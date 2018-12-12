@@ -75,6 +75,24 @@ td.appendChild(img);
 ```
 
 #### html table hightlight
+
+> add border
+
+```html
+<table border="8" cellspacing="10">
+  <tr>
+    <th>Month</th>
+    <th>Savings</th>
+  </tr>
+  <tr>
+    <td>January</td>
+    <td>$100</td>
+  </tr>
+</table>
+```
+
+> insert row and its columns.
+
 ```js
 res = eval("(" + res + ")"); // res is the ajax response, success: function(res){}
 var tbody = document.getElementById('tbody');
