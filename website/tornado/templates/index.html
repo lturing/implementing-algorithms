@@ -1,0 +1,218 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>generate tts</title>
+        <script src="https://libs.baidu.com/jquery/1.7.1/jquery.min.js"></script>
+        <style>
+            button {background: #28d; padding: 9px 14px; margin-left: 8px; border: none; outline: none;
+                color: #fff; font-size: 14px; border-radius: 4px; cursor: pointer;}
+            button:hover {box-shadow: 0 1px 2px rgba(0,0,0,.15); opacity: 0.9;}
+            button:active {background: #29f;}
+            button[disabled] {opacity: 0.4; cursor: default}
+        </style>
+    </head>
+    <body>
+        <div align="center">
+            <h2><p> welcome </p></h2>
+            <p>the process will last about one min. only english characters are supported and currently there has no anomaly detection.</p>
+            <div id="wav">
+
+                <input id="text" type="text" style="width:50%;height:50px;" value="input english text to generate, the short will better.">
+                <select id="form">
+                    <option value="p225">p225</option>
+                    <option value="p285">p285</option>
+                    <option value="p300">p300</option>
+                    <option value="p360">p360</option>
+                </select>
+                <button onclick="generate_tts()" style="height:50px" id="button">generating</button>
+                <br/>
+                <br/>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ref_speaker</th>
+                            <th>text</th>
+                            <th>wav</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><b>p225</b></td>
+                            <td>This is a very common type of bow, one showing mainly red and yellow, with little or no green or blue.</td>
+                            <td><audio controls><source src="/static/wav/p225_024.wav"></audio></td>
+                        </tr>
+                        <tr>
+                            <td><b>p285</b></td>
+                            <td>Who would be a referee?</td>
+                            <td><audio controls><source src="/static/wav/p285_116.wav"></audio></td>
+                        </tr>
+                        <tr>
+                            <td><b>p300</b></td>
+                            <td>I was in the train station overnight.</td>
+                            <td><audio controls><source src="/static/wav/p300_148.wav"></audio></td>
+                        </tr>
+                        <tr>
+                            <td><b>p360</b></td>
+                            <td>This is a very common type of bow, one showing mainly red and yellow, with little or no green or blue.</td>
+                            <td><audio controls><source src="/static/wav/p360_024.wav"></audio></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <br/>
+                <!--
+                <audio controls> 
+                    <source src="">
+                </audio>
+                -->
+            </div>
+            <br/>
+            <hr></hr>
+            <div>
+                <button onclick="window.location.href='http://143.248.97.172:9000/'">Emotional TTS</button>
+                <button onclick="window.location.href='https://ttsdemos.github.io/'">Baidu</button>
+                <button onclick="window.location.href='https://google.github.io/tacotron/'">Google</button>
+            </div>
+
+            <!--
+            <button onclick="change()">点击导入</button>
+            <button onclick="draw_canvas()">draw image</button>
+            -->
+
+        </div>
+
+    </body>
+    <script>
+        function generate_tts(){
+            var input = document.getElementById('text').value;
+            input = input.trim();
+            if (input.length > 0){
+                var button = document.querySelector("#button") 
+                button.disabled = true;              
+                var container = document.getElementById('wav');
+                while(true){
+                    var p = container.getElementsByTagName('p');
+                    if (p.length > 0){
+                        container.removeChild(p[0]);
+                    }
+                    else{
+                        break;
+                    }
+                }
+                
+                var form = document.getElementById("form");
+                speaker = form.value;
+                var data = {txt: input, speaker:speaker};
+                data = JSON.stringify(data);
+                var loading = document.createElement('p');
+                loading.innerText = "It will be slooooooooow as generating on CPU........."
+                container.appendChild(loading);
+
+                $.ajax({
+                    url:    "/generate_tts",
+                    type:   "POST",
+                    async:  false,
+                    data:   data,
+                    datatye: 'json',
+
+                    success:function(res){
+                        res = JSON.parse(res);
+                        var container = document.getElementById('wav');
+                        while(true){
+				            var p = container.getElementsByTagName('p');
+				            if (p.length > 0){
+					            container.removeChild(p[0]);
+				            }
+				            else{
+					            break;
+				            }
+			            }
+                        
+                        var img = document.createElement('img');
+                        img.src = res['img'];
+                        var p = document.createElement('p');
+                        p.appendChild(img);
+                        container.appendChild(p);
+
+
+                        var audio = document.createElement('audio');
+                        audio.setAttribute('controls', '');
+                        var wav = document.createElement('source');
+                        wav.src = res['wav'];
+                        audio.appendChild(wav);
+                        var p = document.createElement('p');
+                        p.appendChild(audio);
+                        container.appendChild(p);
+                        
+                        var p = document.createElement('p');
+                        p.innerText = "processed text: " + res['txt'] + " in " + res['speaker'];
+                        container.appendChild(p);
+                        button.disabled = false;
+
+                    },
+                    error:function(res){
+                        console.log('error');
+                        button.disabled = false;
+                    }
+                })
+            }
+        }
+    </script>
+    <script>
+        function sleep(millseconds){
+            var waitUntil = new Date().getTime() + millseconds;
+            while(new Date().getTime() < waitUntil) true;
+        }
+    </script>
+    <script>
+        function change(){
+            var container = document.getElementById('wav');
+            var audio = container.getElementsByTagName('audio')[0];
+            container.removeChild(audio);
+
+            sleep(2);
+            sleep(2000);
+            //setTimeout(function(){;}, 7000);
+
+            audio = document.createElement('audio');
+            audio.setAttribute('controls', '');
+
+            var wav = document.createElement('source');
+            wav.src = "https://ttsdemos.github.io/paper1_demos/us/B1.wav";
+
+            audio.appendChild(wav);
+            container.appendChild(audio);
+
+        }
+    </script>
+    <script>
+        function draw_canvas(){
+
+            var img = document.createElement('img');
+            img.src = "./dog.jpg";
+            var p = document.createElement('p');
+            p.appendChild(img)
+            var container = document.getElementById('wav');
+            container.appendChild(p);
+
+            /*
+            var canvas = document.createElement('canvas');
+            var context = canvas.getContext('2d');
+            var img = new Image();
+
+            img.onload = function(){
+                context.drawImage(img, 0, 0, 200, 200);
+            }
+
+            img.src = "./dog.jpg";
+
+            var container = document.getElementById('wav');
+
+            var p = document.createElement('p');
+            p.appendChild(canvas);
+            container.appendChild(p);
+            */
+        }
+    </script>
+</html>
+
+

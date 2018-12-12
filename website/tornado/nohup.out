@@ -1,0 +1,447 @@
+/usr/local/lib/python3.5/dist-packages/h5py/__init__.py:36: FutureWarning: Conversion of the second argument of issubdtype from `float` to `np.floating` is deprecated. In future, it will be treated as `np.float64 == np.dtype(float).type`.
+  from ._conv import register_converters as _register_converters
+WARNING:tensorflow:From /usr/local/lib/python3.5/dist-packages/tensorflow/python/util/deprecation.py:381: calling conv1d (from tensorflow.python.ops.nn_ops) with data_format=NHWC is deprecated and will be removed in a future version.
+Instructions for updating:
+`NHWC` for data_format is deprecated, use `NWC` instead
+WARNING:tensorflow:From /home/spurs/tacotron/models/multihead_attention.py:114: calling reduce_sum (from tensorflow.python.ops.math_ops) with keep_dims is deprecated and will be removed in a future version.
+Instructions for updating:
+keep_dims is deprecated, use keepdims instead
+2018-11-26 10:57:48.955555: E tensorflow/stream_executor/cuda/cuda_driver.cc:406] failed call to cuInit: CUDA_ERROR_NO_DEVICE
+[I 181126 10:58:20 web:2106] 200 GET / (10.5.0.239) 14.08ms
+[I 181126 10:58:22 web:2106] 200 POST /generate_tts (10.5.0.239) 1.06ms
+[I 181126 10:58:22 web:2106] 304 GET /static/res/iter_374500_speaker_p264_ab14e0ab02a3179b2fd6cb5041d3f9d8.png (10.5.0.239) 5.74ms
+[I 181126 10:58:22 web:2106] 304 GET /static/res/iter_374500_speaker_p264_ab14e0ab02a3179b2fd6cb5041d3f9d8.wav (10.5.0.239) 4.55ms
+[I 181126 10:59:43 web:2106] 304 GET / (10.5.0.239) 1.01ms
+[I 181126 10:59:45 web:2106] 200 POST /generate_tts (10.5.0.239) 1.04ms
+[I 181126 10:59:45 web:2106] 304 GET /static/res/iter_374500_speaker_p264_ab14e0ab02a3179b2fd6cb5041d3f9d8.png (10.5.0.239) 1.01ms
+[I 181126 10:59:45 web:2106] 304 GET /static/res/iter_374500_speaker_p264_ab14e0ab02a3179b2fd6cb5041d3f9d8.wav (10.5.0.239) 0.92ms
+[I 181126 10:59:58 web:2106] 304 GET / (10.5.0.239) 0.76ms
+[I 181126 11:01:18 web:2106] 200 POST /generate_tts (10.5.0.239) 73122.03ms
+[I 181126 11:01:18 web:2106] 200 GET /static/res/iter_374500_speaker_p264_1ea6f5df5c67f428e5237d2a091a5c70.png (10.5.0.239) 1.18ms
+[I 181126 11:06:14 web:2106] 200 GET /static/res/iter_374500_speaker_p264_1ea6f5df5c67f428e5237d2a091a5c70.wav (10.5.0.239) 31.35ms
+[I 181126 11:06:23 web:2106] 206 GET /static/res/iter_374500_speaker_p264_1ea6f5df5c67f428e5237d2a091a5c70.wav (10.5.0.239) 22.57ms
+[I 181126 20:34:51 web:2106] 206 GET /static/res/iter_374500_speaker_p264_1ea6f5df5c67f428e5237d2a091a5c70.wav (10.5.0.239) 12.55ms
+[I 181126 20:34:51 web:2106] 206 GET /static/res/iter_374500_speaker_p264_1ea6f5df5c67f428e5237d2a091a5c70.wav (10.5.0.239) 1.12ms
+[E 181126 20:35:24 web:1621] Uncaught exception POST /generate_tts (10.5.0.239)
+    HTTPServerRequest(protocol='http', host='10.5.1.49:8000', method='POST', uri='/generate_tts', version='HTTP/1.1', remote_ip='10.5.0.239')
+    Traceback (most recent call last):
+      File "/usr/local/lib/python3.5/dist-packages/tornado/web.py", line 1541, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "run.py", line 72, in post
+        f.write(synth.synthesize(txt, mel_targets=None, reference_mel=reference_mel, alignment_path=img))
+      File "/home/spurs/tacotron/synthesizer.py", line 43, in synthesize
+        seq = text_to_sequence(text)
+      File "/home/spurs/tacotron/text/__init__.py", line 15, in text_to_sequence
+        sequences = [_symbol_to_id[t] for t in text]
+      File "/home/spurs/tacotron/text/__init__.py", line 15, in <listcomp>
+        sequences = [_symbol_to_id[t] for t in text]
+    KeyError: 'T'
+[E 181126 20:35:24 web:2106] 500 POST /generate_tts (10.5.0.239) 3.57ms
+[I 181126 20:46:25 web:2106] 304 GET / (10.5.0.239) 0.59ms
+[I 181126 20:48:01 web:2106] 304 GET / (10.5.0.239) 0.55ms
+[I 181126 20:48:04 web:2106] 304 GET / (10.5.0.239) 0.87ms
+[I 181126 20:48:05 web:2106] 304 GET / (10.5.0.239) 0.64ms
+/usr/local/lib/python3.5/dist-packages/h5py/__init__.py:36: FutureWarning: Conversion of the second argument of issubdtype from `float` to `np.floating` is deprecated. In future, it will be treated as `np.float64 == np.dtype(float).type`.
+  from ._conv import register_converters as _register_converters
+WARNING:tensorflow:From /usr/local/lib/python3.5/dist-packages/tensorflow/python/util/deprecation.py:381: calling conv1d (from tensorflow.python.ops.nn_ops) with data_format=NHWC is deprecated and will be removed in a future version.
+Instructions for updating:
+`NHWC` for data_format is deprecated, use `NWC` instead
+WARNING:tensorflow:From /home/spurs/tacotron/models/multihead_attention.py:114: calling reduce_sum (from tensorflow.python.ops.math_ops) with keep_dims is deprecated and will be removed in a future version.
+Instructions for updating:
+keep_dims is deprecated, use keepdims instead
+2018-11-26 21:56:20.297197: E tensorflow/stream_executor/cuda/cuda_driver.cc:406] failed call to cuInit: CUDA_ERROR_NO_DEVICE
+[I 181126 21:57:28 web:2106] 304 GET / (10.5.0.239) 6.94ms
+[I 181126 21:57:30 web:2106] 200 POST /generate_tts (10.5.0.239) 0.60ms
+[I 181126 21:59:56 web:2106] 304 GET / (10.5.0.239) 0.53ms
+[I 181126 21:59:58 web:2106] 304 GET / (10.5.0.239) 0.50ms
+[I 181126 22:00:08 web:2106] 200 GET / (10.5.0.239) 0.70ms
+[W 181126 22:00:08 web:2106] 404 GET /favicon.ico (10.5.0.239) 0.81ms
+[I 181126 22:00:36 web:2106] 304 GET / (10.5.0.239) 0.86ms
+[I 181126 22:00:37 web:2106] 304 GET / (10.5.0.239) 0.89ms
+[I 181126 22:00:37 web:2106] 304 GET / (10.5.0.239) 1.45ms
+[I 181126 22:00:37 web:2106] 304 GET / (10.5.0.239) 0.91ms
+[I 181126 22:00:38 web:2106] 304 GET / (10.5.0.239) 0.90ms
+/usr/local/lib/python3.5/dist-packages/h5py/__init__.py:36: FutureWarning: Conversion of the second argument of issubdtype from `float` to `np.floating` is deprecated. In future, it will be treated as `np.float64 == np.dtype(float).type`.
+  from ._conv import register_converters as _register_converters
+WARNING:tensorflow:From /usr/local/lib/python3.5/dist-packages/tensorflow/python/util/deprecation.py:381: calling conv1d (from tensorflow.python.ops.nn_ops) with data_format=NHWC is deprecated and will be removed in a future version.
+Instructions for updating:
+`NHWC` for data_format is deprecated, use `NWC` instead
+WARNING:tensorflow:From /home/spurs/tacotron/models/multihead_attention.py:114: calling reduce_sum (from tensorflow.python.ops.math_ops) with keep_dims is deprecated and will be removed in a future version.
+Instructions for updating:
+keep_dims is deprecated, use keepdims instead
+2018-11-26 22:04:20.235067: E tensorflow/stream_executor/cuda/cuda_driver.cc:406] failed call to cuInit: CUDA_ERROR_NO_DEVICE
+Constructing model: tacotron
+Initialized Tacotron model. Dimensions: 
+   text embedding:               256
+   style embedding:           256
+   prenet out:                     128
+   encoder out:                512
+   attention out:             256
+   concat attn & out:        768
+   decoder cell out:            256
+   decoder out (2 frames):  160
+   decoder out (1 frame):   80
+   postnet out:                256
+   linear out:                     1025
+Loading checkpoint: /home/spurs/tacotron/logs-tacotron/model.ckpt-166500
+10.5.1.49:9000
+Traceback (most recent call last):
+  File "run.py", line 108, in <module>
+    tornado.ioloop.IOLoop.instance().start()
+  File "/usr/local/lib/python3.5/dist-packages/tornado/platform/asyncio.py", line 112, in start
+    self.asyncio_loop.run_forever()
+  File "/usr/lib/python3.5/asyncio/base_events.py", line 345, in run_forever
+    self._run_once()
+  File "/usr/lib/python3.5/asyncio/base_events.py", line 1276, in _run_once
+    event_list = self._selector.select(timeout)
+  File "/usr/lib/python3.5/selectors.py", line 441, in select
+    fd_event_list = self._epoll.poll(timeout, max_ev)
+KeyboardInterrupt
+/usr/local/lib/python3.5/dist-packages/h5py/__init__.py:36: FutureWarning: Conversion of the second argument of issubdtype from `float` to `np.floating` is deprecated. In future, it will be treated as `np.float64 == np.dtype(float).type`.
+  from ._conv import register_converters as _register_converters
+WARNING:tensorflow:From /usr/local/lib/python3.5/dist-packages/tensorflow/python/util/deprecation.py:381: calling conv1d (from tensorflow.python.ops.nn_ops) with data_format=NHWC is deprecated and will be removed in a future version.
+Instructions for updating:
+`NHWC` for data_format is deprecated, use `NWC` instead
+WARNING:tensorflow:From /home/spurs/tacotron/models/multihead_attention.py:114: calling reduce_sum (from tensorflow.python.ops.math_ops) with keep_dims is deprecated and will be removed in a future version.
+Instructions for updating:
+keep_dims is deprecated, use keepdims instead
+2018-11-26 22:53:40.542537: E tensorflow/stream_executor/cuda/cuda_driver.cc:406] failed call to cuInit: CUDA_ERROR_NO_DEVICE
+[I 181126 22:53:59 web:2106] 304 GET / (10.5.0.239) 9.46ms
+[I 181126 22:54:03 web:2106] 200 POST /generate_tts (10.5.0.239) 0.61ms
+[I 181126 22:54:03 web:2106] 304 GET /static/res/iter_166500_speaker_p264_74ba98af4eff9db30aab29a9c9c4d132.png (10.5.0.239) 2.42ms
+[I 181126 22:54:03 web:2106] 304 GET /static/res/iter_166500_speaker_p264_74ba98af4eff9db30aab29a9c9c4d132.wav (10.5.0.239) 1.87ms
+[I 181127 01:00:23 web:2106] 304 GET / (10.5.0.239) 0.47ms
+Constructing model: tacotron
+Initialized Tacotron model. Dimensions: 
+   text embedding:               256
+   style embedding:           256
+   prenet out:                     128
+   encoder out:                512
+   attention out:             256
+   concat attn & out:        768
+   decoder cell out:            256
+   decoder out (2 frames):  160
+   decoder out (1 frame):   80
+   postnet out:                256
+   linear out:                     1025
+Loading checkpoint: /home/spurs/tacotron/logs-tacotron/model.ckpt-166500
+10.5.1.49:9000
+Traceback (most recent call last):
+  File "run.py", line 108, in <module>
+    tornado.ioloop.IOLoop.instance().start()
+  File "/usr/local/lib/python3.5/dist-packages/tornado/platform/asyncio.py", line 112, in start
+    self.asyncio_loop.run_forever()
+  File "/usr/lib/python3.5/asyncio/base_events.py", line 345, in run_forever
+    self._run_once()
+  File "/usr/lib/python3.5/asyncio/base_events.py", line 1276, in _run_once
+    event_list = self._selector.select(timeout)
+  File "/usr/lib/python3.5/selectors.py", line 441, in select
+    fd_event_list = self._epoll.poll(timeout, max_ev)
+KeyboardInterrupt
+/usr/local/lib/python3.5/dist-packages/h5py/__init__.py:36: FutureWarning: Conversion of the second argument of issubdtype from `float` to `np.floating` is deprecated. In future, it will be treated as `np.float64 == np.dtype(float).type`.
+  from ._conv import register_converters as _register_converters
+WARNING:tensorflow:From /usr/local/lib/python3.5/dist-packages/tensorflow/python/util/deprecation.py:381: calling conv1d (from tensorflow.python.ops.nn_ops) with data_format=NHWC is deprecated and will be removed in a future version.
+Instructions for updating:
+`NHWC` for data_format is deprecated, use `NWC` instead
+WARNING:tensorflow:From /home/spurs/tacotron/models/multihead_attention.py:114: calling reduce_sum (from tensorflow.python.ops.math_ops) with keep_dims is deprecated and will be removed in a future version.
+Instructions for updating:
+keep_dims is deprecated, use keepdims instead
+2018-11-28 03:16:23.657946: E tensorflow/stream_executor/cuda/cuda_driver.cc:406] failed call to cuInit: CUDA_ERROR_NO_DEVICE
+[I 181128 03:17:24 web:2106] 304 GET /static/res/iter_166500_speaker_p360_74ba98af4eff9db30aab29a9c9c4d132.wav (10.5.0.239) 7.64ms
+Constructing model: tacotron
+Initialized Tacotron model. Dimensions: 
+   text embedding:               256
+   style embedding:           256
+   prenet out:                     128
+   encoder out:                512
+   attention out:             256
+   concat attn & out:        768
+   decoder cell out:            256
+   decoder out (2 frames):  160
+   decoder out (1 frame):   80
+   postnet out:                256
+   linear out:                     1025
+Loading checkpoint: /home/spurs/tacotron/logs-tacotron/model.ckpt-166500
+10.5.1.49:9000
+Traceback (most recent call last):
+  File "run.py", line 128, in <module>
+    tornado.ioloop.IOLoop.instance().start()
+  File "/usr/local/lib/python3.5/dist-packages/tornado/platform/asyncio.py", line 112, in start
+    self.asyncio_loop.run_forever()
+  File "/usr/lib/python3.5/asyncio/base_events.py", line 345, in run_forever
+    self._run_once()
+  File "/usr/lib/python3.5/asyncio/base_events.py", line 1276, in _run_once
+    event_list = self._selector.select(timeout)
+  File "/usr/lib/python3.5/selectors.py", line 441, in select
+    fd_event_list = self._epoll.poll(timeout, max_ev)
+KeyboardInterrupt
+/usr/local/lib/python3.5/dist-packages/h5py/__init__.py:36: FutureWarning: Conversion of the second argument of issubdtype from `float` to `np.floating` is deprecated. In future, it will be treated as `np.float64 == np.dtype(float).type`.
+  from ._conv import register_converters as _register_converters
+WARNING:tensorflow:From /usr/local/lib/python3.5/dist-packages/tensorflow/python/util/deprecation.py:381: calling conv1d (from tensorflow.python.ops.nn_ops) with data_format=NHWC is deprecated and will be removed in a future version.
+Instructions for updating:
+`NHWC` for data_format is deprecated, use `NWC` instead
+WARNING:tensorflow:From /home/spurs/tacotron/models/multihead_attention.py:114: calling reduce_sum (from tensorflow.python.ops.math_ops) with keep_dims is deprecated and will be removed in a future version.
+Instructions for updating:
+keep_dims is deprecated, use keepdims instead
+2018-11-28 03:18:50.463906: E tensorflow/stream_executor/cuda/cuda_driver.cc:406] failed call to cuInit: CUDA_ERROR_NO_DEVICE
+Constructing model: tacotron
+Initialized Tacotron model. Dimensions: 
+   text embedding:               256
+   style embedding:           256
+   prenet out:                     128
+   encoder out:                512
+   attention out:             256
+   concat attn & out:        768
+   decoder cell out:            256
+   decoder out (2 frames):  160
+   decoder out (1 frame):   80
+   postnet out:                256
+   linear out:                     1025
+Loading checkpoint: /home/spurs/tacotron/logs-tacotron/model.ckpt-166500
+10.5.1.49:9000
+Traceback (most recent call last):
+  File "run.py", line 127, in <module>
+    server.listen(9000)
+  File "/usr/local/lib/python3.5/dist-packages/tornado/tcpserver.py", line 144, in listen
+    sockets = bind_sockets(port, address=address)
+  File "/usr/local/lib/python3.5/dist-packages/tornado/netutil.py", line 163, in bind_sockets
+    sock.bind(sockaddr)
+OSError: [Errno 98] Address already in use
+/usr/local/lib/python3.5/dist-packages/h5py/__init__.py:36: FutureWarning: Conversion of the second argument of issubdtype from `float` to `np.floating` is deprecated. In future, it will be treated as `np.float64 == np.dtype(float).type`.
+  from ._conv import register_converters as _register_converters
+WARNING:tensorflow:From /usr/local/lib/python3.5/dist-packages/tensorflow/python/util/deprecation.py:381: calling conv1d (from tensorflow.python.ops.nn_ops) with data_format=NHWC is deprecated and will be removed in a future version.
+Instructions for updating:
+`NHWC` for data_format is deprecated, use `NWC` instead
+WARNING:tensorflow:From /home/spurs/tacotron/models/multihead_attention.py:114: calling reduce_sum (from tensorflow.python.ops.math_ops) with keep_dims is deprecated and will be removed in a future version.
+Instructions for updating:
+keep_dims is deprecated, use keepdims instead
+2018-11-28 03:44:14.480654: E tensorflow/stream_executor/cuda/cuda_driver.cc:406] failed call to cuInit: CUDA_ERROR_NO_DEVICE
+[I 181128 03:44:49 web:2106] 304 GET / (10.5.0.239) 6.63ms
+[I 181128 03:44:51 web:2106] 200 POST /generate_tts (10.5.0.239) 1.23ms
+[I 181128 03:44:51 web:2106] 304 GET /static/res/iter_166500_speaker_p225_74ba98af4eff9db30aab29a9c9c4d132.png (10.5.0.239) 2.80ms
+[I 181128 03:44:51 web:2106] 200 GET /static/res/iter_166500_speaker_p225_74ba98af4eff9db30aab29a9c9c4d132.wav (10.5.0.239) 12.00ms
+[I 181128 03:45:43 web:2106] 200 GET /static/res/iter_166500_speaker_p225_74ba98af4eff9db30aab29a9c9c4d132.wav (10.5.0.239) 8.36ms
+[I 181128 03:45:44 web:2106] 304 GET /static/res/iter_166500_speaker_p225_74ba98af4eff9db30aab29a9c9c4d132.wav (10.5.0.239) 0.53ms
+[I 181128 03:46:05 web:2106] 200 GET /static/res/iter_166500_speaker_p225_74ba98af4eff9db30aab29a9c9c4d132.wav (10.5.0.239) 2.70ms
+[I 181128 03:46:05 web:2106] 200 GET /static/res/iter_166500_speaker_p225_74ba98af4eff9db30aab29a9c9c4d132.wav (10.5.0.239) 10.87ms
+[W 181128 03:46:23 web:1618] 403 GET /static/res (10.5.0.239): res is not a file
+[W 181128 03:46:23 web:2106] 403 GET /static/res (10.5.0.239) 0.95ms
+[W 181128 03:46:31 web:2106] 404 GET /static (10.5.0.239) 0.47ms
+[I 181128 03:46:35 web:2106] 304 GET / (10.5.0.239) 0.89ms
+[I 181128 03:47:29 web:2106] 304 GET / (10.5.0.239) 0.44ms
+Constructing model: tacotron
+Initialized Tacotron model. Dimensions: 
+   text embedding:               256
+   style embedding:           256
+   prenet out:                     128
+   encoder out:                512
+   attention out:             256
+   concat attn & out:        768
+   decoder cell out:            256
+   decoder out (2 frames):  160
+   decoder out (1 frame):   80
+   postnet out:                256
+   linear out:                     1025
+Loading checkpoint: /home/spurs/tacotron/logs-tacotron/model.ckpt-166500
+10.5.1.49:9000
+Traceback (most recent call last):
+  File "run.py", line 128, in <module>
+    tornado.ioloop.IOLoop.instance().start()
+  File "/usr/local/lib/python3.5/dist-packages/tornado/platform/asyncio.py", line 112, in start
+    self.asyncio_loop.run_forever()
+  File "/usr/lib/python3.5/asyncio/base_events.py", line 345, in run_forever
+    self._run_once()
+  File "/usr/lib/python3.5/asyncio/base_events.py", line 1276, in _run_once
+    event_list = self._selector.select(timeout)
+  File "/usr/lib/python3.5/selectors.py", line 441, in select
+    fd_event_list = self._epoll.poll(timeout, max_ev)
+KeyboardInterrupt
+/usr/local/lib/python3.5/dist-packages/h5py/__init__.py:36: FutureWarning: Conversion of the second argument of issubdtype from `float` to `np.floating` is deprecated. In future, it will be treated as `np.float64 == np.dtype(float).type`.
+  from ._conv import register_converters as _register_converters
+WARNING:tensorflow:From /usr/local/lib/python3.5/dist-packages/tensorflow/python/util/deprecation.py:381: calling conv1d (from tensorflow.python.ops.nn_ops) with data_format=NHWC is deprecated and will be removed in a future version.
+Instructions for updating:
+`NHWC` for data_format is deprecated, use `NWC` instead
+WARNING:tensorflow:From /home/spurs/tacotron/models/multihead_attention.py:114: calling reduce_sum (from tensorflow.python.ops.math_ops) with keep_dims is deprecated and will be removed in a future version.
+Instructions for updating:
+keep_dims is deprecated, use keepdims instead
+2018-11-28 03:55:58.198237: E tensorflow/stream_executor/cuda/cuda_driver.cc:406] failed call to cuInit: CUDA_ERROR_NO_DEVICE
+[I 181128 03:56:29 web:2106] 304 GET / (10.5.0.239) 8.23ms
+[I 181128 03:56:29 web:2106] 304 GET /static/wav/p225_024.wav (10.5.0.239) 4.06ms
+[I 181128 03:56:29 web:2106] 304 GET /static/wav/p285_116.wav (10.5.0.239) 1.25ms
+[I 181128 03:56:29 web:2106] 304 GET /static/wav/p300_148.wav (10.5.0.239) 2.43ms
+[I 181128 03:56:29 web:2106] 304 GET /static/wav/p360_024.wav (10.5.0.239) 1.87ms
+[I 181128 03:56:30 web:2106] 304 GET / (10.5.0.239) 0.45ms
+[I 181128 03:56:35 web:2106] 304 GET / (10.5.0.239) 0.47ms
+[I 181128 05:30:04 web:2106] 304 GET / (10.5.0.239) 0.46ms
+[I 181128 05:30:06 web:2106] 304 GET /static/wav/p225_024.wav (10.5.0.239) 0.53ms
+[I 181128 05:30:06 web:2106] 304 GET /static/wav/p285_116.wav (10.5.0.239) 0.36ms
+[I 181128 05:30:06 web:2106] 304 GET /static/wav/p300_148.wav (10.5.0.239) 0.36ms
+[I 181128 05:30:06 web:2106] 304 GET /static/wav/p360_024.wav (10.5.0.239) 0.36ms
+[I 181128 05:30:35 web:2106] 200 POST /generate_tts (10.5.0.239) 1.47ms
+[I 181128 05:30:35 web:2106] 304 GET /static/res/iter_166500_speaker_p225_74ba98af4eff9db30aab29a9c9c4d132.png (10.5.0.239) 1.22ms
+[I 181128 05:30:35 web:2106] 304 GET /static/res/iter_166500_speaker_p225_74ba98af4eff9db30aab29a9c9c4d132.wav (10.5.0.239) 1.73ms
+[I 181128 05:36:26 web:2106] 304 GET / (10.5.0.239) 0.44ms
+/usr/local/lib/python3.5/dist-packages/h5py/__init__.py:36: FutureWarning: Conversion of the second argument of issubdtype from `float` to `np.floating` is deprecated. In future, it will be treated as `np.float64 == np.dtype(float).type`.
+  from ._conv import register_converters as _register_converters
+WARNING:tensorflow:From /usr/local/lib/python3.5/dist-packages/tensorflow/python/util/deprecation.py:381: calling conv1d (from tensorflow.python.ops.nn_ops) with data_format=NHWC is deprecated and will be removed in a future version.
+Instructions for updating:
+`NHWC` for data_format is deprecated, use `NWC` instead
+WARNING:tensorflow:From /home/spurs/tacotron/models/multihead_attention.py:114: calling reduce_sum (from tensorflow.python.ops.math_ops) with keep_dims is deprecated and will be removed in a future version.
+Instructions for updating:
+keep_dims is deprecated, use keepdims instead
+2018-11-28 07:03:58.993328: E tensorflow/stream_executor/cuda/cuda_driver.cc:406] failed call to cuInit: CUDA_ERROR_NO_DEVICE
+[I 181128 07:11:58 web:2106] 304 GET / (10.5.0.239) 7.63ms
+[I 181128 07:11:58 web:2106] 304 GET /static/wav/p225_024.wav (10.5.0.239) 5.34ms
+[I 181128 07:11:58 web:2106] 304 GET /static/wav/p285_116.wav (10.5.0.239) 1.16ms
+[I 181128 07:11:58 web:2106] 304 GET /static/wav/p360_024.wav (10.5.0.239) 2.17ms
+[I 181128 07:11:58 web:2106] 304 GET /static/wav/p300_148.wav (10.5.0.239) 3.22ms
+[I 181128 20:21:33 web:2106] 304 GET / (10.5.0.239) 0.47ms
+[I 181128 20:21:34 web:2106] 304 GET /static/wav/p225_024.wav (10.5.0.239) 0.86ms
+[I 181128 20:21:34 web:2106] 304 GET /static/wav/p285_116.wav (10.5.0.239) 0.51ms
+[I 181128 20:21:34 web:2106] 304 GET /static/wav/p300_148.wav (10.5.0.239) 0.49ms
+[I 181128 20:21:34 web:2106] 304 GET /static/wav/p360_024.wav (10.5.0.239) 0.43ms
+[I 181128 20:21:36 web:2106] 200 POST /generate_tts (10.5.0.239) 1.72ms
+[I 181128 20:21:36 web:2106] 304 GET /static/res/iter_274000_speaker_p225_3e38846443527f975c1de7d3c574f573.png (10.5.0.239) 0.56ms
+[I 181128 20:21:36 web:2106] 304 GET /static/res/iter_274000_speaker_p225_3e38846443527f975c1de7d3c574f573.wav (10.5.0.239) 0.86ms
+[I 181128 21:28:10 web:2106] 200 POST /generate_tts (10.5.0.239) 69017.00ms
+[I 181128 21:28:10 web:2106] 200 GET /static/res/iter_274000_speaker_p225_1fdf41b8d85772f870f92de7d7fafc3a.png (10.5.0.239) 0.80ms
+[I 181128 21:28:10 web:2106] 200 GET /static/res/iter_274000_speaker_p225_1fdf41b8d85772f870f92de7d7fafc3a.wav (10.5.0.239) 17.39ms
+[I 181128 21:52:51 web:2106] 304 GET / (10.5.0.239) 0.84ms
+/usr/local/lib/python3.5/dist-packages/h5py/__init__.py:36: FutureWarning: Conversion of the second argument of issubdtype from `float` to `np.floating` is deprecated. In future, it will be treated as `np.float64 == np.dtype(float).type`.
+  from ._conv import register_converters as _register_converters
+WARNING:tensorflow:From /usr/local/lib/python3.5/dist-packages/tensorflow/python/util/deprecation.py:381: calling conv1d (from tensorflow.python.ops.nn_ops) with data_format=NHWC is deprecated and will be removed in a future version.
+Instructions for updating:
+`NHWC` for data_format is deprecated, use `NWC` instead
+WARNING:tensorflow:From /home/spurs/tacotron/models/multihead_attention.py:114: calling reduce_sum (from tensorflow.python.ops.math_ops) with keep_dims is deprecated and will be removed in a future version.
+Instructions for updating:
+keep_dims is deprecated, use keepdims instead
+2018-12-02 02:38:27.752134: E tensorflow/stream_executor/cuda/cuda_driver.cc:406] failed call to cuInit: CUDA_ERROR_NO_DEVICE
+Constructing model: tacotron
+Initialized Tacotron model. Dimensions: 
+   text embedding:               256
+   style embedding:           256
+   prenet out:                     128
+   encoder out:                512
+   attention out:             256
+   concat attn & out:        768
+   decoder cell out:            256
+   decoder out (2 frames):  160
+   decoder out (1 frame):   80
+   postnet out:                256
+   linear out:                     1025
+Loading checkpoint: /home/spurs/tacotron/logs-tacotron/model.ckpt-274000
+Traceback (most recent call last):
+  File "run.py", line 37, in <module>
+    synth.load(args.checkpoint, reference_mel=True)
+  File "/home/spurs/tacotron/synthesizer.py", line 38, in load
+    saver.restore(self.session, checkpoint_path)
+  File "/usr/local/lib/python3.5/dist-packages/tensorflow/python/training/saver.py", line 1750, in restore
+    {self.saver_def.filename_tensor_name: save_path})
+  File "/usr/local/lib/python3.5/dist-packages/tensorflow/python/client/session.py", line 895, in run
+    run_metadata_ptr)
+  File "/usr/local/lib/python3.5/dist-packages/tensorflow/python/client/session.py", line 1128, in _run
+    feed_dict_tensor, options, run_metadata)
+  File "/usr/local/lib/python3.5/dist-packages/tensorflow/python/client/session.py", line 1344, in _do_run
+    options, run_metadata)
+  File "/usr/local/lib/python3.5/dist-packages/tensorflow/python/client/session.py", line 1350, in _do_call
+    return fn(*args)
+  File "/usr/local/lib/python3.5/dist-packages/tensorflow/python/client/session.py", line 1329, in _run_fn
+    status, run_metadata)
+KeyboardInterrupt
+/usr/local/lib/python3.5/dist-packages/h5py/__init__.py:36: FutureWarning: Conversion of the second argument of issubdtype from `float` to `np.floating` is deprecated. In future, it will be treated as `np.float64 == np.dtype(float).type`.
+  from ._conv import register_converters as _register_converters
+WARNING:tensorflow:From /usr/local/lib/python3.5/dist-packages/tensorflow/python/util/deprecation.py:381: calling conv1d (from tensorflow.python.ops.nn_ops) with data_format=NHWC is deprecated and will be removed in a future version.
+Instructions for updating:
+`NHWC` for data_format is deprecated, use `NWC` instead
+WARNING:tensorflow:From /home/spurs/tacotron/models/multihead_attention.py:114: calling reduce_sum (from tensorflow.python.ops.math_ops) with keep_dims is deprecated and will be removed in a future version.
+Instructions for updating:
+keep_dims is deprecated, use keepdims instead
+2018-12-02 02:41:19.769285: E tensorflow/stream_executor/cuda/cuda_driver.cc:406] failed call to cuInit: CUDA_ERROR_NO_DEVICE
+[I 181202 02:41:33 web:2106] 304 GET / (222.20.60.194) 14.37ms
+[I 181202 02:41:33 web:2106] 200 GET /static/wav/p360_024.wav (222.20.60.194) 107.64ms
+[I 181202 02:41:33 web:2106] 200 GET /static/wav/p225_024.wav (222.20.60.194) 132.77ms
+[I 181202 02:41:33 web:2106] 200 GET /static/wav/p300_148.wav (222.20.60.194) 156.89ms
+[I 181202 02:41:51 web:2106] 304 GET / (222.20.60.194) 0.86ms
+[I 181202 02:41:53 web:2106] 200 POST /generate_tts (222.20.60.194) 2.02ms
+[I 181202 02:42:08 web:2106] 304 GET / (222.20.60.194) 0.83ms
+[I 181202 02:42:08 web:2106] 200 GET /static/wav/p300_148.wav (222.20.60.194) 59.84ms
+[I 181202 20:29:51 web:2106] 304 GET / (10.5.0.239) 0.91ms
+[I 181202 20:29:51 web:2106] 304 GET /static/wav/p225_024.wav (10.5.0.239) 1.15ms
+[I 181202 20:29:51 web:2106] 304 GET /static/wav/p285_116.wav (10.5.0.239) 1.82ms
+[I 181202 20:29:51 web:2106] 304 GET /static/wav/p300_148.wav (10.5.0.239) 0.84ms
+[I 181202 20:29:51 web:2106] 304 GET /static/wav/p360_024.wav (10.5.0.239) 0.83ms
+[I 181202 20:29:54 web:2106] 200 POST /generate_tts (10.5.0.239) 1.92ms
+[I 181202 20:29:54 web:2106] 304 GET /static/res/iter_274000_speaker_p225_3e38846443527f975c1de7d3c574f573.png (10.5.0.239) 1.02ms
+[I 181202 20:29:54 web:2106] 304 GET /static/res/iter_274000_speaker_p225_3e38846443527f975c1de7d3c574f573.wav (10.5.0.239) 1.11ms
+[I 181203 01:15:40 web:2106] 304 GET / (10.5.0.239) 1.02ms
+[I 181203 01:16:17 web:2106] 200 POST /generate_tts (10.5.0.239) 2.99ms
+[I 181203 01:18:04 web:2106] 200 POST /generate_tts (10.5.0.239) 72242.21ms
+[I 181203 01:18:04 web:2106] 200 GET /static/res/iter_274000_speaker_p285_3e38846443527f975c1de7d3c574f573.png (10.5.0.239) 0.80ms
+[I 181203 01:18:04 web:2106] 200 GET /static/res/iter_274000_speaker_p285_3e38846443527f975c1de7d3c574f573.wav (10.5.0.239) 13.59ms
+[I 181203 01:18:15 web:2106] 304 GET /static/res/iter_274000_speaker_p285_3e38846443527f975c1de7d3c574f573.wav (10.5.0.239) 1.18ms
+[I 181203 01:20:52 web:2106] 200 POST /generate_tts (10.5.0.239) 69870.85ms
+[I 181203 01:20:52 web:2106] 200 GET /static/res/iter_274000_speaker_p360_1fdf41b8d85772f870f92de7d7fafc3a.png (10.5.0.239) 1.82ms
+[I 181203 01:20:52 web:2106] 200 GET /static/res/iter_274000_speaker_p360_1fdf41b8d85772f870f92de7d7fafc3a.wav (10.5.0.239) 11.05ms
+[I 181203 01:31:25 web:2106] 304 GET /static/res/iter_274000_speaker_p360_1fdf41b8d85772f870f92de7d7fafc3a.wav (10.5.0.239) 0.94ms
+/usr/local/lib/python3.5/dist-packages/h5py/__init__.py:36: FutureWarning: Conversion of the second argument of issubdtype from `float` to `np.floating` is deprecated. In future, it will be treated as `np.float64 == np.dtype(float).type`.
+  from ._conv import register_converters as _register_converters
+WARNING:tensorflow:From /usr/local/lib/python3.5/dist-packages/tensorflow/python/util/deprecation.py:381: calling conv1d (from tensorflow.python.ops.nn_ops) with data_format=NHWC is deprecated and will be removed in a future version.
+Instructions for updating:
+`NHWC` for data_format is deprecated, use `NWC` instead
+WARNING:tensorflow:From /home/spurs/tacotron/models/multihead_attention.py:114: calling reduce_sum (from tensorflow.python.ops.math_ops) with keep_dims is deprecated and will be removed in a future version.
+Instructions for updating:
+keep_dims is deprecated, use keepdims instead
+2018-12-05 04:10:25.872573: E tensorflow/stream_executor/cuda/cuda_driver.cc:406] failed call to cuInit: CUDA_ERROR_NO_DEVICE
+[I 181205 04:10:34 web:2106] 304 GET / (10.5.0.239) 13.64ms
+[I 181205 04:10:34 web:2106] 304 GET /static/wav/p225_024.wav (10.5.0.239) 4.54ms
+[I 181205 04:10:34 web:2106] 304 GET /static/wav/p285_116.wav (10.5.0.239) 0.81ms
+[I 181205 04:10:34 web:2106] 304 GET /static/wav/p360_024.wav (10.5.0.239) 1.77ms
+[I 181205 04:10:34 web:2106] 304 GET /static/wav/p300_148.wav (10.5.0.239) 2.54ms
+[I 181205 04:10:36 web:2106] 200 POST /generate_tts (10.5.0.239) 2.95ms
+[I 181205 04:10:36 web:2106] 200 GET /static/res/iter_274000_speaker_p225_3e38846443527f975c1de7d3c574f573.png (10.5.0.239) 1.34ms
+[I 181205 04:10:36 web:2106] 304 GET /static/res/iter_274000_speaker_p225_3e38846443527f975c1de7d3c574f573.wav (10.5.0.239) 1.89ms
+[I 181205 04:11:58 web:2106] 200 POST /generate_tts (10.5.0.239) 70119.12ms
+[I 181205 04:11:58 web:2106] 200 GET /static/res/iter_274000_speaker_p225_f38091cd22d0a33f24e6e31d3442f9e1.png (10.5.0.239) 0.77ms
+[I 181205 04:11:58 web:2106] 200 POST /generate_tts (10.5.0.239) 0.83ms
+[I 181205 04:11:58 web:2106] 304 GET /static/res/iter_274000_speaker_p225_f38091cd22d0a33f24e6e31d3442f9e1.wav (10.5.0.239) 0.39ms
+[I 181205 04:11:58 web:2106] 200 GET /static/res/iter_274000_speaker_p225_f38091cd22d0a33f24e6e31d3442f9e1.wav (10.5.0.239) 8.36ms
+[I 181205 05:12:59 web:2106] 304 GET / (10.5.0.239) 0.49ms
+[I 181206 01:21:35 web:2106] 304 GET / (10.5.0.239) 0.61ms
+[I 181206 01:21:35 web:2106] 304 GET /static/wav/p225_024.wav (10.5.0.239) 0.73ms
+[I 181206 01:21:35 web:2106] 304 GET /static/wav/p285_116.wav (10.5.0.239) 0.54ms
+[I 181206 01:21:35 web:2106] 304 GET /static/wav/p300_148.wav (10.5.0.239) 0.47ms
+[I 181206 01:21:35 web:2106] 304 GET /static/wav/p360_024.wav (10.5.0.239) 0.48ms
+[I 181206 01:21:38 web:2106] 200 POST /generate_tts (10.5.0.239) 1.41ms
+[I 181206 01:21:38 web:2106] 304 GET /static/res/iter_274000_speaker_p225_3e38846443527f975c1de7d3c574f573.png (10.5.0.239) 0.57ms
+[I 181206 01:21:38 web:2106] 304 GET /static/res/iter_274000_speaker_p225_3e38846443527f975c1de7d3c574f573.wav (10.5.0.239) 0.37ms
+[I 181206 22:36:13 web:2106] 200 GET / (10.5.0.236) 0.63ms
+[I 181206 22:36:14 web:2106] 200 GET /static/wav/p285_116.wav (10.5.0.236) 5.57ms
+[I 181206 22:36:14 web:2106] 200 GET /static/wav/p225_024.wav (10.5.0.236) 15.02ms
+[I 181206 22:36:14 web:2106] 200 GET /static/wav/p300_148.wav (10.5.0.236) 20.59ms
+[I 181206 22:36:14 web:2106] 200 GET /static/wav/p360_024.wav (10.5.0.236) 15.31ms
+[W 181206 22:36:14 web:2106] 404 GET /favicon.ico (10.5.0.236) 0.86ms
+[I 181209 00:28:29 web:2106] 304 GET / (10.5.0.239) 0.94ms
+[I 181209 00:28:29 web:2106] 200 GET /static/wav/p285_116.wav (10.5.0.239) 8.80ms
+[I 181209 00:28:30 web:2106] 200 GET /static/wav/p225_024.wav (10.5.0.239) 91.44ms
+[I 181209 00:28:30 web:2106] 200 GET /static/wav/p360_024.wav (10.5.0.239) 60.89ms
+[I 181209 00:28:30 web:2106] 200 GET /static/wav/p300_148.wav (10.5.0.239) 130.11ms
+[I 181209 00:28:39 web:2106] 206 GET /static/wav/p225_024.wav (10.5.0.239) 13.71ms
+[I 181209 00:28:45 web:2106] 200 POST /generate_tts (10.5.0.239) 2.07ms
+[I 181209 00:28:45 web:2106] 304 GET /static/res/iter_274000_speaker_p225_3e38846443527f975c1de7d3c574f573.png (10.5.0.239) 1.01ms
+[I 181209 00:28:45 web:2106] 200 GET /static/res/iter_274000_speaker_p225_3e38846443527f975c1de7d3c574f573.wav (10.5.0.239) 11.67ms
+[I 181211 06:12:03 web:2106] 304 GET / (10.5.0.239) 0.55ms
+[W 181211 06:12:03 web:2106] 404 GET /favicon.ico (10.5.0.239) 0.90ms
+[I 181211 06:12:03 web:2106] 304 GET /static/wav/p285_116.wav (10.5.0.239) 0.53ms
+[I 181211 06:12:03 web:2106] 206 GET /static/wav/p225_024.wav (10.5.0.239) 11.57ms
+[I 181211 06:12:04 web:2106] 200 GET /static/wav/p360_024.wav (10.5.0.239) 56.05ms
+[I 181211 06:12:04 web:2106] 200 GET /static/wav/p300_148.wav (10.5.0.239) 76.61ms
+[I 181211 07:54:11 web:2106] 304 GET / (10.5.0.239) 0.50ms
+[I 181211 07:54:11 web:2106] 200 GET /static/wav/p360_024.wav (10.5.0.239) 83.54ms
+[I 181211 07:54:11 web:2106] 200 GET /static/wav/p300_148.wav (10.5.0.239) 104.68ms
+[I 181211 10:01:51 web:2106] 304 GET / (10.5.0.239) 0.90ms
+[I 181211 10:01:52 web:2106] 206 GET /static/wav/p225_024.wav (10.5.0.239) 3.25ms
+[I 181211 10:01:52 web:2106] 200 GET /static/wav/p300_148.wav (10.5.0.239) 108.45ms
+[I 181211 10:01:52 web:2106] 200 GET /static/wav/p360_024.wav (10.5.0.239) 105.02ms
+[I 181211 10:01:53 web:2106] 200 POST /generate_tts (10.5.0.239) 3.37ms
+[I 181211 10:01:53 web:2106] 200 GET /static/res/iter_274000_speaker_p225_3e38846443527f975c1de7d3c574f573.png (10.5.0.239) 2.23ms
+[I 181211 10:01:53 web:2106] 304 GET /static/res/iter_274000_speaker_p225_3e38846443527f975c1de7d3c574f573.wav (10.5.0.239) 0.90ms
