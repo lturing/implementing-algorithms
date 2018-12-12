@@ -30,7 +30,7 @@ def get_spectrograms(fpath):
     y, sr = librosa.load(fpath, sr=sr) # Audio will be automatically resampled to the given rate
 
     # Trimming
-    y, _ = librosa.effects.trim(y)
+    #y, _ = librosa.effects.trim(y)
 
     # Preemphasis
     preemphasis = 0.97
