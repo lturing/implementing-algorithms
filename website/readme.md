@@ -76,7 +76,7 @@ td.appendChild(img);
 
 #### html table hightlight
 
-> add border
+- add border
 
 ```html
 <table border="8" cellspacing="10">
@@ -91,7 +91,7 @@ td.appendChild(img);
 </table>
 ```
 
-> insert row and its columns.
+- insert row and its columns.
 
 ```js
 res = eval("(" + res + ")"); // res is the ajax response, success: function(res){}
@@ -129,7 +129,8 @@ row.appendChild(td);
 
 ```
 
-> remove items from table
+- remove items from table
+
 ```js
 function clear_wav(){
     tbody = document.getElementById('tbody');
