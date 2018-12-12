@@ -167,3 +167,20 @@ var reg = /^[0-9]+$/ ; # all are digital.
 var reg= /^[A-Za-z]+$/; # all are english characters.
 
 ```
+
+#### opencv resize photos 
+```python
+import cv2
+
+im = cv2.imread('path_to_img')
+cv2.namedWindow('frame', cv2.WINDOW_NORMAL)
+cv2.imshow('frame', im)
+cv2.waitKey(10)
+cv2.destroyAllWindows()
+
+'''
+if cv2.waitKey() & 0xFF == ord('q'):
+    cv2.destroyAllWindows()
+'''
+
+```
