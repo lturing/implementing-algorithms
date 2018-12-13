@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>HTML5 Audio</title>
+    <style>
+        .pButton{
+            height:25px;
+            width: 25px;
+            border: none;
+            background-size: 50% 50%;
+            background-repeat: no-repeat;
+            background-position: center;
+            float:left;
+            outline:none;
+        }
+        li {float:left; list-sytle:none; display:block;}
+    </style>
+</head>
+
+<body>
+
+    <li>
+        <p>
+            <img src="/static/wav/p364_014.png">
+        </p>
+        <p>
+            <audio id="music_101" preload="true">
+                <source src="/static/wav/p364_014.wav">
+            </audio>
+            <button id="button_101" class="pButton" onclick="play_wav(101)"></button>
+        </p>
+    </li>
+    <li>
+        <p>
+            <img src="/static/wav/p374_014.png">
+        </p>
+        <p>
+            <audio id="music_102" preload="true">
+                <source src="/static/wav/p374_014.wav">
+            </audio>
+            <button id="button_102" class="pButton" onclick="play_wav(102)"></button>
+        </p>
+    </li>
+    <script>
+        document.addEventListener("DOMContentLoaded", function(event) {
+            var pButtons = document.getElementsByClassName('pButton');
+            for(var i = 0; i < pButtons.length; i ++){
+                pButtons[i].style.backgroundImage = 'url(./img/play.png)';
+            }
+
+        });
+    </script>
+    <script>
+        function play_wav(idx){
+            var music = document.getElementById('music_' + idx);
+            var pbutton = document.getElementById('button_' + idx);
+            if (music.paused){
+                music.play();
+                pbutton.style.backgroundImage = 'url(./img/pause.png)';
+            }
+            else{
+                music.pause();
+                pbutton.style.backgroundImage = 'url(./img/play.png)';
+            }
+        }
+    </script>
+
+</body>
+
+</html>
