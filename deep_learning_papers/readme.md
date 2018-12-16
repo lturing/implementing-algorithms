@@ -7,3 +7,5 @@
 
 ### others
 - [Learning to learn by gradient descent by gradient descent](https://arxiv.org/pdf/1606.04474.pdf)
+- [Dynamic Routing Between Capsules](https://arxiv.org/pdf/1710.09829.pdf)
+- [matrix capsule with em routing](https://openreview.net/pdf?id=HJWLfGWRb)
