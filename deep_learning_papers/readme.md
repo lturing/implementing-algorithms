@@ -4,3 +4,6 @@
 - [Learning to Segment Every Thing](https://arxiv.org/pdf/1711.10370.pdf)
 - [Spatial Transformer Networks](https://arxiv.org/pdf/1506.02025.pdf)
 - [hyperNetworks](https://arxiv.org/pdf/1609.09106.pdf)
+
+### others
+- [Learning to learn by gradient descent by gradient descent](https://arxiv.org/pdf/1606.04474.pdf)
