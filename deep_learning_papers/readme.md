@@ -3,7 +3,12 @@
 - [metaAnchor: learning to detect objects with customized anchors](http://papers.nips.cc/paper/7315-metaanchor-learning-to-detect-objects-with-customized-anchors.pdf)
 - [Learning to Segment Every Thing](https://arxiv.org/pdf/1711.10370.pdf)
 - [Spatial Transformer Networks](https://arxiv.org/pdf/1506.02025.pdf)
+- [Inverse Compositional Spatial Transformer Networks](https://arxiv.org/pdf/1612.03897.pdf)
 - [hyperNetworks](https://arxiv.org/pdf/1609.09106.pdf)
+- [R-FCN: Object Detection via Region-based Fully Convolutional Networks](https://arxiv.org/pdf/1605.06409.pdf)
+- [deformable convolutional networks](https://arxiv.org/pdf/1703.06211.pdf)
+- [Deformable ConvNets v2: More Deformable, Better Results](https://arxiv.org/pdf/1811.11168.pdf)
+
 
 ### others
 - [Learning to learn by gradient descent by gradient descent](https://arxiv.org/pdf/1606.04474.pdf)
