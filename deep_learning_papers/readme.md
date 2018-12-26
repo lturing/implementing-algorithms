@@ -24,6 +24,7 @@
 - [sequence-to-sequence learning as beam-search optimization](https://arxiv.org/pdf/1606.02960.pdf)
 - [attention is all you need](https://arxiv.org/abs/1706.03762)
 - [attending to mathematical language with transformers](https://arxiv.org/ftp/arxiv/papers/1812/1812.02825.pdf)
+- [self-attention with relative position representation](https://arxiv.org/pdf/1803.02155.pdf)
 
 
 
