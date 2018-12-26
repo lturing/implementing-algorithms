@@ -8,6 +8,7 @@
 - [R-FCN: Object Detection via Region-based Fully Convolutional Networks](https://arxiv.org/pdf/1605.06409.pdf)
 - [deformable convolutional networks](https://arxiv.org/pdf/1703.06211.pdf)
 - [Deformable ConvNets v2: More Deformable, Better Results](https://arxiv.org/pdf/1811.11168.pdf)
+- [what you get is what you see: a visual markup decompiler](https://arxiv.org/pdf/1609.04938v1.pdf)
 
 
 ### others
