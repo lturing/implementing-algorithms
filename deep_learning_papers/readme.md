@@ -22,4 +22,4 @@
 - [sheduled sampling for sequence prediction with recurrent neural networks](https://arxiv.org/pdf/1506.03099.pdf)
 - [Google's Neural Machine Translation System: Bridging the Gap between Human and Machine Translate](https://arxiv.org/pdf/1609.08144.pdf)
 - [sequence-to-sequence learning as beam-search optimization](https://arxiv.org/pdf/1606.02960.pdf)
-
+- [attention is all you need](https://arxiv.org/abs/1706.03762)
