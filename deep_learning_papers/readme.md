@@ -18,3 +18,5 @@
 
 ### NLP
 - [sheduled sampling for sequence prediction with recurrent neural networks](https://arxiv.org/pdf/1506.03099.pdf)
+- [Google's Neural Machine Translation System: Bridging the Gap between Human and Machine Translate](https://arxiv.org/pdf/1609.08144.pdf)
+
