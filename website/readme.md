@@ -50,6 +50,7 @@ def plot_im(fpaths): #fpaths = {'en' : path_to_english_audio, 'ch' : path_to_chi
         cbar_ax = fig.add_axes([0.92, 0.05, 0.025, 0.87])
         fig.colorbar(im, cax=cbar_ax)
         #plt.title(titles[k][0], loc='center')
+        plt.tight_layout()
 
         save_file = BytesIO()
         plt.savefig(save_file, format='png')
