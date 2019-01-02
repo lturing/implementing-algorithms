@@ -2,7 +2,7 @@
 - [Numerical Coordinate Regression with Convolutional Neural Networks](https://arxiv.org/pdf/1801.07372.pdf)
 - [non-local neural networks](https://arxiv.org/pdf/1711.07971.pdf)
 - [network in networks](https://arxiv.org/pdf/1312.4400.pdf)
-> Furthermore, the fully connected layers are prone to overfitting and heavily depend on dropout regularization, while global
+> the fully connected layers are prone to overfitting and heavily depend on dropout regularization, while global
 average pooling is itself a structural regularizer, which natively prevents overfitting for the overall structure. 全连接神经网络的空间泛化能力不行(模型训练期间在一个位置获得得知识在推理阶段推广到另一个位置的能力, 比如训练集中图片中的气球在左上，拿一个气球在图片右下的图片，全连接不一定能检测到)
 
 
