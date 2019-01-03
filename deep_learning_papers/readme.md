@@ -1,4 +1,5 @@
 ### general
+- [Mixture density network](https://publications.aston.ac.uk/373/1/NCRG_94_004.pdf)
 - [Numerical Coordinate Regression with Convolutional Neural Networks](https://arxiv.org/pdf/1801.07372.pdf)
 - [non-local neural networks](https://arxiv.org/pdf/1711.07971.pdf)
 - [network in networks](https://arxiv.org/pdf/1312.4400.pdf)
