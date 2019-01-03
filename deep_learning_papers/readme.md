@@ -17,6 +17,9 @@ average pooling is itself a structural regularizer, which natively prevents over
 - [Attention Is All You Need](https://arxiv.org/pdf/1706.03762.pdf)
 - [Attention-Based Models for Speech Recognition](https://arxiv.org/pdf/1506.07503.pdf)
 - [neural machine translation by jointly learning to align and translate](https://arxiv.org/pdf/1409.0473.pdf)
+- [weakly supervised memory networks](https://arxiv.org/pdf/1503.08895v2.pdf)
+- [generating sequences with recurrent neural networks](https://arxiv.org/pdf/1308.0850.pdf)
+- [
 
 ----------------
 
