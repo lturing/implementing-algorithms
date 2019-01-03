@@ -8,9 +8,9 @@ average pooling is itself a structural regularizer, which natively prevents over
 --------------------
 
 ### attention
-1, content-based attention: a_i = Attend(s_{i-1}, h}, where s_{i-1} is the state of lstm and h is the output of encoder.
-2, location-based attention: a_i = Attend(s_{i-1}, a_{i-1}), where a_{i-1} is the previous attention alignment.
-3, hybrid attention: a_i = Attend(s_{i-1}, a_{i-1}, h)
+1, content-based attention: a_i = Attend(s_{i-1}, h}, where s_{i-1} is the state of lstm and h is the output of encoder.  
+2, location-based attention: a_i = Attend(s_{i-1}, a_{i-1}), where a_{i-1} is the previous attention alignment.   
+3, hybrid attention: a_i = Attend(s_{i-1}, a_{i-1}, h)     
 
 - [Show, Attend and Tell: Neural Image Caption Generation with Visual Attention](https://arxiv.org/pdf/1502.03044.pdf)
 - [Neural Turing Machines](https://arxiv.org/pdf/1410.5401.pdf)
