@@ -39,7 +39,7 @@
 - They may become isolated from society.                       
 - They may become overly paranoid about social organizations and institutions trying to control them. 
 - They may unknowingly or uncaringly hurt people's feelings.   
-- - They may be completely unaware of how to express their inner world to others in a  meaningful way. 
+- They may be completely unaware of how to express their inner world to others in a  meaningful way. 
 - They may be completely unaware of the type of communication that is often desireable and (to some degree) expected in an intimate relationship.  If they are aware of the kinds of things that are appropriate to say and do to foster emotional bonding, they may be unable to appreciate the value of such actions.  They may feel too vulnerable to express themselves in this fashion, and so reject the entire idea. 
 -  If pushed beyond their comfort level to form commitments or emotional bonds, they may  reject a relationship entirely. 
 -  Under stress, they may show intense emotions that seem disproportionate to the situation.
