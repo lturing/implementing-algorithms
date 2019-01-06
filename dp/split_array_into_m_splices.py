@@ -11,7 +11,7 @@ n = input()
 m = input()
 '''
 
-n = 10
+n = 30
 m = 4
 
 assert n >= m, "n must be not less than m"
@@ -36,41 +36,33 @@ print(f[n, m])
 
 f = {}
 def traverse_split_rec(n=n, m=m):
+    if m == 1:
+        f[n, m] = [[n]]
+        return 
     if (n, m) not in f:
         f[n, m] = []
-    if m == 1:
-        f[n, m] = [n]
-        return 
+
     for i in range(n-1, max(m-2, 0), -1):
         if (i, m-1) not in f:
             traverse_split_rec(i, m-1)
+            
         tmp = copy.deepcopy(f[i, m-1])
-
-        if type(tmp[0]) == list:
-            for item in tmp:
-                item.append(n)
-                f[n, m].append(item)
-        else:
-            tmp.append(n)
-            f[n, m].append(tmp)
+        for item in tmp:
+            item.append(n)
+            f[n, m].append(item)
 
 traverse_split_rec()
 ret = f[n, m]
-ret = sorted(ret, key=lambda asd:([asd[i] for i in range(len(asd))]), reverse=True)
-
-
-'''
-for item in ret:
-    tmp = [str(i+1) for i in range(n)]
-    for j in range(m-2, -1, -1):
-        tmp.insert(item[j], ',')
-    tmp = ''.join(tmp)
-    print(tmp)
-'''
-
+ret = sorted(ret, key=lambda asd:([asd[i] for i in range(len(asd))]))
 
 for item in ret:
-    tmp = ''.join([str(i+1) for i in range(n)])
-    for j in range(m-2, -1, -1):
-        tmp = tmp[:item[j]] + ',' + tmp[item[j]:]
+    tmp = ''
+    j = 0 
+    for i in range(0, n):
+        if i < item[j]:
+            tmp += str(i+1) + ' '
+        else:
+            tmp = tmp[:-1] + ', ' + str(i+1) + ' '
+            j += 1
+
     print(tmp)
