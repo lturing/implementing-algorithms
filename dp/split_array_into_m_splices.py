@@ -14,7 +14,7 @@ m = input()
 n = 10
 m = 4
 
-assert n >= m, "n must be greater than m"
+assert n >= m, "n must be not less than m"
 
 f = {}
 
