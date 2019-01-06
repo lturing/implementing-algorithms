@@ -5,7 +5,7 @@ SCRF is a variant of the linear-chain CRF model where each output token correspo
 '''
 import copy 
 
-# split an array of lenght n into m splices
+# split an array of lenght n into m slices
 '''
 n = input()
 m = input()
