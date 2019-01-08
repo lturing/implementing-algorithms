@@ -15,7 +15,8 @@ average pooling is itself a structural regularizer, which natively prevents over
 
 #### attention in computer vision
 1, spatial attention: only consider the 2d h*w weight, and the weight will be broadcasted in c channels.      
-2, channel attention: only consider the channel c weight, and the weight will be broadcasted in h and w.
+2, channel attention: only consider the channel c weight, and the weight will be broadcasted in h and w.[ref](https://arxiv.org/pdf/1611.05594.pdf)        
+
 
 - [Show, Attend and Tell: Neural Image Caption Generation with Visual Attention](https://arxiv.org/pdf/1502.03044.pdf)
 - [Neural Turing Machines](https://arxiv.org/pdf/1410.5401.pdf)
@@ -24,7 +25,8 @@ average pooling is itself a structural regularizer, which natively prevents over
 - [neural machine translation by jointly learning to align and translate](https://arxiv.org/pdf/1409.0473.pdf)
 - [weakly supervised memory networks](https://arxiv.org/pdf/1503.08895v2.pdf)
 - [generating sequences with recurrent neural networks](https://arxiv.org/pdf/1308.0850.pdf)
-- [
+- [SCA-CNN: Spatial and Channel-wise Attention in Convolutional Networks for Image Captioning](https://arxiv.org/pdf/1611.05594.pdf)
+
 
 ----------------
 
