@@ -28,6 +28,7 @@ average pooling is itself a structural regularizer, which natively prevents over
 - [multilingual hierarchical attention networks for document classification](https://arxiv.org/abs/1707.00896)
 - [attention-over-attention neural networks for reading comprehension](https://arxiv.org/abs/1607.04423)
 - [convolutional sequence to sequence learning](https://arxiv.org/abs/1705.03122)
+- [attention-based models for speech recognition](https://arxiv.org/abs/1506.07503)
 - [SCA-CNN: Spatial and Channel-wise Attention in Convolutional Networks for Image Captioning](https://arxiv.org/pdf/1611.05594.pdf)
 
 
