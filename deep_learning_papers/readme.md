@@ -66,11 +66,18 @@ average pooling is itself a structural regularizer, which natively prevents over
 - [Why Self-Attention? A Targeted Evaluation of Neural Machine Translation Architectures](http://aclweb.org/anthology/D18-1458)
 - [tensor2tensor for neural machine translation](https://arxiv.org/pdf/1803.07416.pdf)
 
+------------------------------------------
 
 ### Speech materials
 - [linguistic data consortium](https://www.ldc.upenn.edu/)
 - [kaldi](https://github.com/kaldi-asr/kaldi)
 - [phd thesis: Exploring Deep Learning Methods for discovering features in speech signals](https://pdfs.semanticscholar.org/b041/75bb99d6beff0f201ed82971aeb91d2c081d.pdf?_ga=2.23777402.1357008885.1546424577-1806537053.1546424577)
+- [eesen: end-to-end speech recognition using deep rnn models and wfst-based decoding](https://arxiv.org/pdf/1507.08240.pdf)
+
+
+------------------------------------
+
+### speech tools
 - [htk](http://htk.eng.cam.ac.uk/)
 
 
