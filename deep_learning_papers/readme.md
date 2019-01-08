@@ -14,7 +14,7 @@ average pooling is itself a structural regularizer, which natively prevents over
 3, hybrid attention: a_i = Attend(s_{i-1}, a_{i-1}, h)     
 
 #### attention in computer vision
-1, spatial attention: only consider the 2d h*w weight, and the weight will be broadcasted in c channels
+1, spatial attention: only consider the 2d h*w weight, and the weight will be broadcasted in c channels.      
 2, channel attention: only consider the channel c weight, and the weight will be broadcasted in h and w.
 
 - [Show, Attend and Tell: Neural Image Caption Generation with Visual Attention](https://arxiv.org/pdf/1502.03044.pdf)
