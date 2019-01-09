@@ -66,6 +66,7 @@ average pooling is itself a structural regularizer, which natively prevents over
 - [Why Self-Attention? A Targeted Evaluation of Neural Machine Translation Architectures](http://aclweb.org/anthology/D18-1458)
 - [tensor2tensor for neural machine translation](https://arxiv.org/pdf/1803.07416.pdf)
 
+
 ------------------------------------------
 
 ### Speech materials
@@ -80,6 +81,10 @@ average pooling is itself a structural regularizer, which natively prevents over
 - [recent advances in google real-time hmm-driven unit selection synthesizer](https://ai.google/research/pubs/pub45564.pdf)
 - [simultaneous modeling of spectrum, pitch and duration in hmm-based speech synthesis](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.28.2007&rep=rep1&type=pdf)
 - [hidden markov models based on multi-space probability distribution for pitch pattern modeling](https://pdfs.semanticscholar.org/60e0/8c785d9266c0de8f07c453d67e6b8c7c9b94.pdf)
+- [char2wav: end-to-end speech synthesis](https://mila.quebec/wp-content/uploads/2017/02/end-end-speech.pdf)
+- [sampleRNN: an unconditional end-to-end neural audio generation model](https://arxiv.org/pdf/1612.07837.pdf)
+
+
 
 
 
