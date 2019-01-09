@@ -76,11 +76,8 @@ average pooling is itself a structural regularizer, which natively prevents over
 - [tacotron](https://google.github.io/tacotron/)
 - [universal dependency annotation fo multilingual parsing](https://www.aclweb.org/anthology/P13-2017)
 - [the ustc and iflytek speech synthesis systems for blizzard challenge 2007](http://www.festvox.org/blizzard/bc2007/blizzard_2007/full_papers/blz3_017.pdf)
-
-#### parametric
 - [fast, compact, and high quality lstm-rnn based statistical parametric speech synthesizers for mobile devices](https://arxiv.org/pdf/1606.06061.pdf)
-
-### concatenative
+- [local minimum generation error criterion for hybrid hmm speech synthesis](https://pdfs.semanticscholar.org/49ff/fcbd1de67c6aec0d87950f0b9a6dca06c890.pdf)
 - [recent advances in google real-time hmm-driven unit selection synthesizer](https://ai.google/research/pubs/pub45564.pdf)
 
 
