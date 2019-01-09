@@ -79,6 +79,9 @@ average pooling is itself a structural regularizer, which natively prevents over
 - [local minimum generation error criterion for hybrid hmm speech synthesis](https://pdfs.semanticscholar.org/49ff/fcbd1de67c6aec0d87950f0b9a6dca06c890.pdf)
 - [recent advances in google real-time hmm-driven unit selection synthesizer](https://ai.google/research/pubs/pub45564.pdf)
 - [simultaneous modeling of spectrum, pitch and duration in hmm-based speech synthesis](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.28.2007&rep=rep1&type=pdf)
+- [hidden markov models based on multi-space probability distribution for pitch pattern modeling](https://pdfs.semanticscholar.org/60e0/8c785d9266c0de8f07c453d67e6b8c7c9b94.pdf)
+
+
 
 
 
