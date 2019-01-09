@@ -83,6 +83,9 @@ average pooling is itself a structural regularizer, which natively prevents over
 - [hidden markov models based on multi-space probability distribution for pitch pattern modeling](https://pdfs.semanticscholar.org/60e0/8c785d9266c0de8f07c453d67e6b8c7c9b94.pdf)
 - [char2wav: end-to-end speech synthesis](https://mila.quebec/wp-content/uploads/2017/02/end-end-speech.pdf)
 - [sampleRNN: an unconditional end-to-end neural audio generation model](https://arxiv.org/pdf/1612.07837.pdf)
+- [exploring deep learning methods for discovering features in speech signals](https://pdfs.semanticscholar.org/b041/75bb99d6beff0f201ed82971aeb91d2c081d.pdf?_ga=2.23777402.1357008885.1546424577-1806537053.1546424577)
+
+
 
 
 
