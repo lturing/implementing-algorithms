@@ -11,7 +11,7 @@ def find_near_adjacent_one_exclude(lens=20):
 
     for i in range(1, len(data)):
         if last == None:
-            ans.apepnd(float('inf'))
+            ans.append(float('inf'))
         else:
             ans.append(i-last)
 
