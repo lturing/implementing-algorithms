@@ -48,6 +48,8 @@ average pooling is itself a structural regularizer, which natively prevents over
 - [what you get is what you see: a visual markup decompiler](https://arxiv.org/pdf/1609.04938v1.pdf)
 - [show, attend and tell: neural image caption generation with visual attention](https://arxiv.org/pdf/1609.04938v1.pdf)
 - [show and tell: lessons learned from the 2015 mscoco image captioning challenge](https://arxiv.org/pdf/1609.06647.pdf)
+- [pixel recurrent neural networks](https://arxiv.org/pdf/1601.06759.pdf)
+- [parallel multiscale autoregressive density estimation](https://arxiv.org/pdf/1703.03664.pdf)
 
 
 ### others
@@ -84,6 +86,7 @@ average pooling is itself a structural regularizer, which natively prevents over
 - [char2wav: end-to-end speech synthesis](https://mila.quebec/wp-content/uploads/2017/02/end-end-speech.pdf)
 - [sampleRNN: an unconditional end-to-end neural audio generation model](https://arxiv.org/pdf/1612.07837.pdf)
 - [exploring deep learning methods for discovering features in speech signals](https://pdfs.semanticscholar.org/b041/75bb99d6beff0f201ed82971aeb91d2c081d.pdf?_ga=2.23777402.1357008885.1546424577-1806537053.1546424577)
+- [sample efficient adaptive text-to-speech](https://arxiv.org/pdf/1809.10460v1.pdf)
 
 
 
