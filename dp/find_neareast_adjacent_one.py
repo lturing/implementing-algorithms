@@ -32,7 +32,7 @@ def find_near_adjacent_one_exclude(lens=20):
     print(data)
     print(ans)
 
-def find_near_adjacent_oen_include(lens=20):
+def find_near_adjacent_one_include(lens=20):
     data = [1 if random.random() > 0.7 else 0 for _ in range(lens)]
 
     ans = [float('inf')]
