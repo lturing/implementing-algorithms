@@ -102,4 +102,8 @@ average pooling is itself a structural regularizer, which natively prevents over
 ### speech tools
 - [htk](http://htk.eng.cam.ac.uk/)
 
+### emotional speech
+- [zenodo.org](https://zenodo.org/record/1188976)
+
+
 
