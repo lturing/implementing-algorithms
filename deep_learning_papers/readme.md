@@ -8,6 +8,15 @@ average pooling is itself a structural regularizer, which natively prevents over
 
 --------------------
 
+### features fusing 
+- concatenation
+- element-wise product
+- element-wise addition
+
+* [Dynamic Fusion with Intra- and Inter-modality AttentionFlow for Visual Question Answering](https://arxiv.org/pdf/1812.05252.pdf)
+
+---------------------------
+
 ### attention
 1, content-based attention: a_i = Attend(s_{i-1}, h}, where s_{i-1} is the state of lstm and h is the output of encoder.  
 2, location-based attention: a_i = Attend(s_{i-1}, a_{i-1}), where a_{i-1} is the previous attention alignment.   
