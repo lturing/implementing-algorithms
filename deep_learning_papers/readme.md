@@ -9,9 +9,9 @@ average pooling is itself a structural regularizer, which natively prevents over
 --------------------
 
 ### features fusing 
-1, concatenation
-2, element-wise product
-3, element-wise addition
+1, concatenation    
+2, element-wise product     
+3, element-wise addition             
 
 * [Dynamic Fusion with Intra- and Inter-modality AttentionFlow for Visual Question Answering](https://arxiv.org/pdf/1812.05252.pdf)
 
