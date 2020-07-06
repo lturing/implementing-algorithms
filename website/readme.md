@@ -53,7 +53,7 @@ def plot_im(fpaths): #fpaths = {'en' : path_to_english_audio, 'ch' : path_to_chi
         plt.tight_layout()
 
         save_file = BytesIO()
-        plt.savefig(save_file, format='png')
+        plt.savefig(save_file, format='png', bbox_inches='tight')
         file_base64 = base64.b64encode(save_file.getvalue()).decode('utf-8')
         ret[k+'_mel'] = file_base64
         plt.close() # high importantly
